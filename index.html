@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lore & Tactics - Diario de Desarrollo & Portal Oficial</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+  <style>
+    :root {
+      --bg: #0c0e14;
+      --card-bg: #141824;
+      --card-hover: #1b2133;
+      --border: #232b40;
+      --border-gold: rgba(255, 205, 117, 0.4);
+      --text: #e2e8f0;
+      --text-muted: #8b9bb4;
+      --gold: #ffcd75;
+      --blue: #3b82f6;
+      --green: #10b981;
+      --red: #ef4444;
+      --purple: #a855f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 24px 16px; max-width: 1080px; margin: 0 auto; line-height: 1.6; }
+
+    /* Header */
+    header { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .brand-title { font-size: 2rem; font-weight: 800; letter-spacing: 1px; color: #fff; text-shadow: 0 0 24px rgba(255, 205, 117, 0.25); }
+    .brand-title span.gold { color: var(--gold); }
+    .brand-subtitle { font-size: 0.95rem; color: var(--text-muted); }
+
+    .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; background: rgba(16, 185, 129, 0.12); color: var(--green); border: 1px solid var(--green); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
+
+    /* Support & Links Banner */
+    .support-card { background: linear-gradient(135deg, rgba(255, 205, 117, 0.08) 0%, rgba(20, 24, 36, 0.95) 100%); border: 1px solid var(--border-gold); border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 6px 24px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 14px; }
+    .support-title { font-size: 1.15rem; font-weight: 700; color: var(--gold); display: flex; align-items: center; gap: 8px; }
+    .support-desc { font-size: 0.9rem; color: #cbd5e1; }
+    .support-buttons { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn { text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-itch { background: #fa5c5c; color: #fff; box-shadow: 0 4px 14px rgba(250, 92, 92, 0.35); }
+    .btn-bmc { background: #ffdd00; color: #000; box-shadow: 0 4px 14px rgba(255, 221, 0, 0.35); }
+    .btn-github { background: #24292e; color: #fff; border: 1px solid #444d56; }
+
+    /* Stats Grid */
+    .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+    .stat-value { font-size: 1.4rem; font-weight: 800; color: #fff; }
+    .stat-highlight { color: var(--gold); }
+
+    /* Nav Tabs */
+    .nav-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    .tab-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .tab-btn:hover { background: var(--card-hover); color: #fff; border-color: var(--gold); }
+    .tab-btn.active { background: rgba(255, 205, 117, 0.12); color: var(--gold); border-color: var(--gold); box-shadow: 0 0 14px rgba(255, 205, 117, 0.2); }
+
+    /* Sections */
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+    .section-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+    /* Gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
+    .gallery-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
+    .gallery-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+    .gallery-thumb { width: 100%; height: 200px; object-fit: cover; background: #000; display: block; border-bottom: 1px solid var(--border); }
+    .gallery-info { padding: 14px; }
+    .gallery-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .gallery-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Tutorial & Documentation Cards */
+    .guide-step { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+    .step-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .step-badge { font-size: 0.75rem; font-weight: 800; background: rgba(255, 205, 117, 0.15); color: var(--gold); padding: 2px 8px; border-radius: 4px; }
+    .step-title { font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .step-body { font-size: 0.9rem; color: #cbd5e1; }
+    .step-body ul { padding-left: 20px; margin-top: 8px; }
+    .step-body li { margin-bottom: 4px; }
+
+    /* Tables */
+    .table-container { overflow-x: auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem; }
+    th { background: #1a2030; color: var(--gold); padding: 12px 14px; font-weight: 700; border-bottom: 1px solid var(--border); }
+    td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: #cbd5e1; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--card-hover); }
+
+    /* Timeline Items */
+    .timeline-item { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+    .timeline-text { font-size: 0.9rem; color: #cbd5e1; }
+
+    /* Lightbox Modal */
+    .lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px; }
+    .lightbox.active { display: flex; }
+    .lightbox-img { max-width: 95%; max-height: 90vh; border-radius: 8px; border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(0,0,0,0.8); }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; color: #fff; font-size: 2rem; font-weight: bold; cursor: pointer; user-select: none; }
+
+    footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <div>
+        <h1 class="brand-title">LORE <span class="gold">&</span> TACTICS</h1>
+        <div class="brand-subtitle">Tactical Auto-Battler RTS — Dev Monitor & Portal Oficial</div>
+      </div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span id="agentStatusText">Prototipo Jugable WebGL Operativo</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Support & Links Banner -->
+  <div class="support-card">
+    <div class="support-header">
+      <div class="support-title">⚔️ Juega el Prototipo y Apoya el Desarrollo</div>
+    </div>
+    <div class="support-desc">
+      RTS táctico sobre cuadrícula en tiempo real con invocación estratégica, economía dual (oro y madera) y combate automatizado estilo Fire Emblem. Diseñado para dispositivos móviles y testeable en navegadores WebGL.
+    </div>
+    <div class="support-buttons">
+      <a href="https://ms-2.itch.io/lore-tactics" target="_blank" rel="noopener" class="btn btn-itch">
+        🎮 Jugar en Itch.io
+      </a>
+      <a href="https://buymeacoffee.com/juanjosejjb" target="_blank" rel="noopener" class="btn btn-bmc">
+        ☕ Invítame un Café en BuyMeACoffee
+      </a>
+      <a href="https://github.com/MS-2/Lore-and-Tactics" target="_blank" rel="noopener" class="btn btn-github">
+        📂 Ver Repositorio en GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Key Metrics -->
+  <div class="grid-stats">
+    <div class="stat-card">
+      <div class="stat-label">Pruebas EditMode</div>
+      <div class="stat-value stat-highlight" id="testsValue">10 / 10 Pasadas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Simulación de Batalla</div>
+      <div class="stat-value">10 Hz C# Puro</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Unidades & Facciones</div>
+      <div class="stat-value stat-highlight">11 Unidades</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Estado de Build</div>
+      <div class="stat-value" style="color: var(--green);">WebGL Listo</div>
+    </div>
+  </div>
+
+  <!-- Tabs Navigation -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showTab('gallery')">📸 Capturas del Juego</button>
+    <button class="tab-btn" onclick="showTab('guide')">📖 Cómo Jugar (Tutorial)</button>
+    <button class="tab-btn" onclick="showTab('bestiary')">⚔️ Facciones & Unidades</button>
+    <button class="tab-btn" onclick="showTab('architecture')">🏗️ Arquitectura Técnica</button>
+    <button class="tab-btn" onclick="showTab('devlog')">📜 DevLog & Hitos</button>
+  </div>
+
+  <!-- Tab: Gallery -->
+  <div id="tab-gallery" class="content-section active">
+    <h2 class="section-title">🖼️ Galería de Capturas In-Game (Build WebGL)</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card" onclick="openLightbox('screenshots/01_login.png')">
+        <img src="screenshots/01_login.png" class="gallery-thumb" alt="Pantalla de Login">
+        <div class="gallery-info">
+          <div class="gallery-title">1. Pantalla de Acceso & Autenticación</div>
+          <div class="gallery-desc">Inicio de sesión simulado compatible con Google y Apple con persistencia local.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/02_overworld.png')">
+        <img src="screenshots/02_overworld.png" class="gallery-thumb" alt="Mapa de Campaña Overworld">
+        <div class="gallery-info">
+          <div class="gallery-title">2. Campaña: Mapa del Overworld</div>
+          <div class="gallery-desc">Selección de misiones con progresión de niveles desbloqueables y perfiles activos.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/03_battle.png')">
+        <img src="screenshots/03_battle.png" class="gallery-thumb" alt="Campo de Batalla RTS">
+        <div class="gallery-info">
+          <div class="gallery-title">3. Cuadrícula de Batalla & HUD Táctico</div>
+          <div class="gallery-desc">Castillo aliado a la izquierda, fortaleza enemiga a la derecha, recursos y barra reactiva.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/04_gameplay.png')">
+        <img src="screenshots/04_gameplay.png" class="gallery-thumb" alt="Unidades y Recolección en Acción">
+        <div class="gallery-info">
+          <div class="gallery-title">4. Recolección Autónoma & Combate</div>
+          <div class="gallery-desc">El Peasant recolecta madera y oro mientras las tropas avanzan con pathfinding A*.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Tutorial / How to Play -->
+  <div id="tab-guide" class="content-section">
+    <h2 class="section-title">📖 Manual del Comandante: Cómo Jugar</h2>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">1. Inicio de Sesión y Campaña</div>
+        <span class="step-badge">Fase Inicial</span>
+      </div>
+      <div class="step-body">
+        Al iniciar el juego, selecciona <b>Continuar con Google</b> o <b>Continuar con Apple</b>. Tu progreso y perfil de comandante quedarán guardados. En el mapa del Overworld, selecciona <b>1. Llanura Fronteriza - ¡COMBATIR!</b> para desplegar tus tropas.
+      </div>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">2. La Economía Dual: Oro y Madera</div>
+        <span class="step-badge">Economía</span>
+      </div>
+      <div class="step-body">
+        Ganas <b>+2 de oro pasivo por segundo</b> y oro adicional al derribar enemigos. Sin embargo, las unidades de élite requieren <b>madera</b>:
+        <ul>
+          <li>Invoca <b>Peasants (50g)</b> temprano en la partida.</li>
+          <li>Los campesinos son autónomos: se asignarán automáticamente al recurso con menos trabajadores (árboles o minas de oro).</li>
+          <li>Cada viaje transporta 10 unidades de recurso directamente a tu castillo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">3. Táctica de Combate y Sinergias</div>
+        <span class="step-badge">Combate</span>
+      </div>
+      <div class="step-body">
+        Las unidades se mueven solas hacia la base rival o enemigos en su radio de detección:
+        <ul>
+          <li><b>Knight (Tanque):</b> Absorbe daño frontal y protege a las unidades frágiles.</li>
+          <li><b>Spearman (Anti-Pesados):</b> Inflige <b>daño x2</b> contra Orcos y el Caudillo Orco (unidades con tag Heavy).</li>
+          <li><b>Archer (Rango 4):</b> Dispara con seguridad desde detrás de tus tropas de choque.</li>
+          <li><b>Wizard (Mágico & Área):</b> Su magia ignora la armadura enemiga y causa daño splash en un radio de 1 celda.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">4. Controles Táctiles y de Navegación</div>
+        <span class="step-badge">Controles</span>
+      </div>
+      <div class="step-body">
+        <ul>
+          <li><b>En Celulares/Tablets:</b> Pellizca la pantalla (pinch) con dos dedos para hacer Zoom In/Out. Arrastra con un dedo para mover la cámara (Pan) por el campo de batalla.</li>
+          <li><b>En PC/Navegador:</b> Rueda del ratón para Zoom. Clic izquierdo y arrastre para desplazar el mapa.</li>
+          <li><b>Barra de Invocación:</b> Los botones se habilitan dinámicamente cuando tienes los recursos necesarios.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">5. Condición de Victoria</div>
+        <span class="step-badge">Objetivo</span>
+      </div>
+      <div class="step-body">
+        Destruye la <b>Fortaleza de la Horda (1500 HP)</b> antes de que las oleadas enemigas arrasen tu <b>Castillo Real (1500 HP)</b>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Bestiary & Units -->
+  <div id="tab-bestiary" class="content-section">
+    <h2 class="section-title">⚔️ Facciones: Reino de Hierro vs Horda Carmesí</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Unidad</th>
+            <th>Bando</th>
+            <th>Costos</th>
+            <th>HP</th>
+            <th>Daño</th>
+            <th>Rango</th>
+            <th>Velocidad</th>
+            <th>Rol / Habilidad Especial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Peasant</b></td>
+            <td>Reino</td>
+            <td>50g</td>
+            <td>40</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1.5 c/s</td>
+            <td>Recolecta 10 de oro o madera en viajes cíclicos.</td>
+          </tr>
+          <tr>
+            <td><b>Knight</b></td>
+            <td>Reino</td>
+            <td>100g / 20w</td>
+            <td>220</td>
+            <td>14</td>
+            <td>1</td>
+            <td>0.8 c/s</td>
+            <td>Tanque pesado con armadura 3. Línea frontal.</td>
+          </tr>
+          <tr>
+            <td><b>Spearman</b></td>
+            <td>Reino</td>
+            <td>75g / 25w</td>
+            <td>130</td>
+            <td>12</td>
+            <td>1</td>
+            <td>1.0 c/s</td>
+            <td><b>Bonus x2 vs Heavy</b> (demuele Orcos).</td>
+          </tr>
+          <tr>
+            <td><b>Archer</b></td>
+            <td>Reino</td>
+            <td>60g / 40w</td>
+            <td>70</td>
+            <td>10</td>
+            <td>4</td>
+            <td>1.0 c/s</td>
+            <td>DPS continuo a larga distancia.</td>
+          </tr>
+          <tr>
+            <td><b>Wizard</b></td>
+            <td>Reino</td>
+            <td>120g / 60w</td>
+            <td>60</td>
+            <td>18</td>
+            <td>3</td>
+            <td>0.8 c/s</td>
+            <td>Daño mágico (ignora armadura) + Splash (área 1).</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td><b>Goblin</b></td>
+            <td>Horda</td>
+            <td>Bounty: 10g</td>
+            <td>60</td>
+            <td>7</td>
+            <td>1</td>
+            <td>1.6 c/s</td>
+            <td>Infantería ligera muy rápida y enjambre.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td><b>Orc</b></td>
+            <td>Horda</td>
+            <td>Bounty: 20g</td>
+            <td>180</td>
+            <td>16</td>
+            <td>1</td>
+            <td>0.9 c/s</td>
+            <td>Guerrero pesado (Heavy) con armadura 2.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td><b>Goblin Archer</b></td>
+            <td>Horda</td>
+            <td>Bounty: 12g</td>
+            <td>55</td>
+            <td>8</td>
+            <td>4</td>
+            <td>1.0 c/s</td>
+            <td>Hostigador a distancia veloz.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td><b>Orc Chieftain</b></td>
+            <td>Horda</td>
+            <td>Bounty: 100g</td>
+            <td>600</td>
+            <td>35</td>
+            <td>1</td>
+            <td>0.6 c/s</td>
+            <td>Mini-jefe colosal: Heavy, armadura 4 y golpe en área.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab: Technical Architecture -->
+  <div id="tab-architecture" class="content-section">
+    <h2 class="section-title">🏗️ Arquitectura Técnica y Patrones de Diseño</h2>
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">Bucle Desacoplado: Simulación Pura en C# (10 Hz)</div>
+        <span class="step-badge">Arquitectura</span>
+      </div>
+      <div class="step-body">
+        La lógica del juego vive en <code>BattleSim</code> como clases C# estándar independientes de Unity (sin <code>MonoBehaviour</code> ni físicas de Unity):
+        <ul>
+          <li><b>Determinismo:</b> El estado del mapa, ocupantes y recursos avanza en ticks fijos de 0.1s (10 Hz).</li>
+          <li><b>Eventos Puros:</b> La simulación dispara eventos (<code>UnitSpawned</code>, <code>UnitMoved</code>, <code>UnitAttacked</code>, <code>BattleEnded</code>) observados por la vista.</li>
+          <li><b>Testabilidad Absoluta:</b> La simulación corre en pruebas unitarias EditMode sin requerir inicializar escenas ni el motor gráfico.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">Contratos de Datos JSON con JsonUtility</div>
+        <span class="step-badge">Data Driven</span>
+      </div>
+      <div class="step-body">
+        Unidades y niveles residen en <code>Assets/Resources/Data/units.json</code> y <code>levels.json</code>. Esto evita conflictos de GUIDs entre ramas de desarrollo y permite ajustar balance y nuevos mapas modificando texto plano.
+      </div>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">Generación de Escenas por Código (Zero Scene Conflicts)</div>
+        <span class="step-badge">SceneBuilder</span>
+      </div>
+      <div class="step-body">
+        Las 3 escenas (<code>Login</code>, <code>Overworld</code>, <code>Battle</code>) se autoconstruyen por código mediante <code>SceneBuilder.cs</code>. Cada pantalla inyecta su Canvas, CanvasScaler adaptativo y jerarquía visual en <code>Awake</code>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: DevLog -->
+  <div id="tab-devlog" class="content-section">
+    <h2 class="section-title">📜 Registro de Hitos & DevLog</h2>
+    <div id="timelineContainer">
+      <!-- Se carga dinámicamente desde backlog.json o estático de respaldo -->
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-05] FASE-04:</b> Portal GitHub Pages, Galería de Capturas, Documentación Técnica y Guía de Juego.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-05] FASE-03:</b> Compilación y Verificación de Build WebGL en Navegador Local (WASM + Assets).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-05] FASE-02:</b> Generación Automática de Escenas y Suite de Pruebas EditMode (10/10 tests pasados).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-05] FASE-01:</b> Implementación de Simulación de Batalla C# Puro, A* Pathfinder, Economía y Vistas Desacopladas.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-05] FASE-00:</b> Arquitectura del Proyecto, Reglas de Agentes, Definición de Datos JSON y Setup de Repositorio en GitHub.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Captura ampliada">
+  </div>
+
+  <footer>
+    <p>Lore & Tactics © 2026. Proyecto desarrollado con Inteligencia Artificial y Unity 6.</p>
+    <p style="margin-top: 6px;">
+      <a href="https://ms-2.itch.io/lore-tactics" target="_blank" style="color: var(--gold); text-decoration: none;">Itch.io</a> &bull; 
+      <a href="https://buymeacoffee.com/juanjosejjb" target="_blank" style="color: var(--gold); text-decoration: none;">BuyMeACoffee</a> &bull; 
+      <a href="https://github.com/MS-2/Lore-and-Tactics" target="_blank" style="color: var(--gold); text-decoration: none;">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+
+      const targetSec = document.getElementById('tab-' + tabId);
+      if (targetSec) targetSec.classList.add('active');
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      lb.classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // Cargar datos dinámicos si existe backlog.json
+    fetch('backlog.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.agent_status) {
+          document.getElementById('agentStatusText').innerText = data.agent_status;
+        }
+        if (data.metrics && data.metrics.editmode_tests_passed) {
+          document.getElementById('testsValue').innerText = data.metrics.editmode_tests_passed + ' Pasadas';
+        }
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

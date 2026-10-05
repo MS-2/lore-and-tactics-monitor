@@ -1,0 +1,53 @@
+{
+  "project": "Lore & Tactics",
+  "daily_token_quota_target": "25%",
+  "current_phase": 4,
+  "agent_status": "Prototipo jugable WebGL finalizado con simulación C# desacoplada, UI táctil móvil, autenticación mock y 10/10 tests EditMode superados",
+  "last_updated": "2026-10-05T14:20:00",
+  "total_estimated_tokens": "48.5k",
+  "links": {
+    "itch_io": "https://ms-2.itch.io/lore-tactics",
+    "buymeacoffee": "https://buymeacoffee.com/juanjosejjb",
+    "github_repo": "https://github.com/MS-2/Lore-and-Tactics"
+  },
+  "metrics": {
+    "editmode_tests_passed": "10 / 10",
+    "webgl_build_status": "Compilado & Operativo (WASM + Assets)",
+    "units_count": 11,
+    "playable_levels": 3,
+    "simulation_tick_rate": "10 Hz Determinista"
+  },
+  "recently_completed": [
+    "[2026-10-05] FASE-04: Portal GitHub Pages, Galería de Capturas, Documentación Técnica y Guía de Juego (~5.2k tokens)",
+    "[2026-10-05] FASE-03: Compilación y Verificación de Build WebGL en Navegador Local (~4.8k tokens)",
+    "[2026-10-05] FASE-02: Generación Automática de Escenas (Login, Overworld, Battle) y Suite de Pruebas EditMode (10/10) (~8.5k tokens)",
+    "[2026-10-05] FASE-01: Implementación de Simulación de Batalla C# Puro, A* Pathfinder, Economía y Vistas Desacopladas (~18.0k tokens)",
+    "[2026-10-05] FASE-00: Arquitectura del Proyecto, Reglas de Agentes, Definición de Datos JSON y Setup de Repositorio (~12.0k tokens)"
+  ],
+  "roadmap": [
+    {
+      "id": "TASK-005",
+      "title": "Generación de Sprites 4-bit definitivos con PixelLab",
+      "status": "in_progress",
+      "assigned_agent": "pixel-artist"
+    },
+    {
+      "id": "TASK-006",
+      "title": "Banda Sonora Chiptune 8-bits y Paisaje Sonoro de Batalla",
+      "status": "planned",
+      "assigned_agent": "chiptune-composer"
+    },
+    {
+      "id": "TASK-007",
+      "title": "Integración Real de Backend Supabase Auth (Google & Apple)",
+      "status": "planned",
+      "assigned_agent": "backend-engineer"
+    },
+    {
+      "id": "TASK-008",
+      "title": "Ampliación de Campaña Overworld a 10 Niveles con Jefes de Zona",
+      "status": "planned",
+      "assigned_agent": "level-designer"
+    }
+  ]
+}
