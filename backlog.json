@@ -1,10 +1,10 @@
 {
   "project": "Lore & Tactics",
   "daily_token_quota_target": "25%",
-  "current_phase": 6,
-  "agent_status": "Layout nativo Portrait implementado (1080x1920 con width match), zona del pulgar inferior ergonómica para juego con 1 sola mano (5.9-6.9 in), >85% de pantalla despejada para el campo de batalla, y build subido a itch.io",
-  "last_updated": "2026-10-05T15:45:00",
-  "total_estimated_tokens": "59.1k",
+  "current_phase": 7,
+  "agent_status": "Dock lateral derecho ergonómico para pulgar (210px), campo de batalla ocupando >90% de pantalla con framing ortográfico 6.1 y compilación WebGL",
+  "last_updated": "2026-10-05T16:00:00",
+  "total_estimated_tokens": "63.2k",
   "links": {
     "itch_io": "https://ms-2.itch.io/lore-tactics",
     "buymeacoffee": "https://buymeacoffee.com/juanjosejjb",
@@ -12,12 +12,13 @@
   },
   "metrics": {
     "editmode_tests_passed": "10 / 10",
-    "webgl_build_status": "Compilado & Operativo en itch.io (HTML5 Portrait)",
+    "webgl_build_status": "Compilado & Operativo en itch.io (HTML5 Portrait - Right Dock)",
     "units_count": 11,
     "playable_levels": 3,
     "simulation_tick_rate": "10 Hz Determinista"
   },
   "recently_completed": [
+    "[2026-10-05] FASE-07: Dock Lateral Derecho & Campo de Batalla Maximizada (>90% pantalla) - Botones de invocación verticales accesibles al pulgar derecho, barra superior flotante ultradelgada, encaje de cuadrícula completo y despliegue a itch.io (~4.1k tokens)",
     "[2026-10-05] FASE-06: UI Nativa Portrait - Canvas 1080x1920 adaptable a 19.5:9/20:9, Thumb Dock inferior 2x3 para 1 sola mano (pantallas 5.9-6.9 in), cámara táctica enfocada en castillo y despliegue a itch.io (~4.9k tokens)",
     "[2026-10-05] FASE-05: Prototipo RTS v2 - Mapas extendidos 32x11, Target Frame al tocar unidad, Aserradero mejorable con oro, Tuerca de ajustes con reinicio, orientación Portrait/Landscape y Árbol de Talentos (~5.7k tokens)",
     "[2026-10-05] FASE-04: Portal GitHub Pages, Galería de Capturas, Documentación Técnica y Guía de Juego (~5.2k tokens)",
