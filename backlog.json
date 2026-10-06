@@ -2,8 +2,8 @@
     "project":  "Lore \u0026 Tactics",
     "daily_token_quota_target":  "25%",
     "current_phase":  13,
-    "agent_status":  "TopBar y BottomDock ancladas edge-to-edge a ras de pantalla (borde superior e inferior físico), cam.rect restringiendo el renderizado del campo de juego para que GridView no invada el HUD, y tipografías ampliadas a 24-32px Bold de alta legibilidad móvil (iPhone 17e \u0026 Pixel 7)",
-    "last_updated":  "2026-10-06T00:41:19",
+    "agent_status":  "Escala aumentada considerablemente en TopBar (130px usable, textos 32-38px) y BottomTabs (210px usable, tabs 52px, tarjetas 240x140px, textos 30px Bold), y cámara configurada por default con zoom out al máximo mostrando el campo de batalla completo",
+    "last_updated":  "2026-10-06T00:56:49",
     "total_estimated_tokens":  "85.0k",
     "links":  {
                   "itch_io":  "https://ms-2.itch.io/lore-tactics",
