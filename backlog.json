@@ -1,10 +1,10 @@
 {
   "project": "Lore & Tactics",
   "daily_token_quota_target": "25%",
-  "current_phase": 12,
-  "agent_status": "BottomDock implementado en la parte inferior con pestañas [TODOS, TROPAS, ECONOMÍA] y scroll horizontal adaptado a Safe Area móvil; mapas actualizados a 1 mina de oro por jugador",
-  "last_updated": "2026-10-06T00:05:00",
-  "total_estimated_tokens": "82.2k",
+  "current_phase": 13,
+  "agent_status": "Offset de mundo aplicado al límite inferior de cámara (CameraController y BattleController) despejando 100% el grid y el castillo; BottomDock compactado a 130px con tarjetas de 80px",
+  "last_updated": "2026-10-06T00:15:00",
+  "total_estimated_tokens": "85.0k",
   "links": {
     "itch_io": "https://ms-2.itch.io/lore-tactics",
     "buymeacoffee": "https://buymeacoffee.com/juanjosejjb",
@@ -18,6 +18,7 @@
     "simulation_tick_rate": "10 Hz Determinista"
   },
   "recently_completed": [
+    "[2026-10-06] FASE-13: Offset de Mundo de Cámara & BottomDock Compacto (130px) - Despeje completo del grid y Castillo del Reino por encima del dock, tarjetas tácticas compactas de 80px y centrado de carril (~2.8k tokens)",
     "[2026-10-06] FASE-12: BottomDock Inferior con Pestañas & Safe Area Móvil - Dock scrolleable horizontalmente, adaptación rigurosa a Safe Area (iPhone 17e & Pixel 7), reducción a 1 mina de oro por jugador y actualización del monitor público (~3.1k tokens)",
     "[2026-10-05] FASE-11: RightDock con Pestañas [TODO / TROPA / ECO] & Panel Scrolleable - ScrollRect con RectMask2D, escalabilidad para futuras unidades ilimitadas, filtrado por categorías y galería de capturas móviles en monitor público (~3.2k tokens)",
     "[2026-10-05] FASE-10: HUD Móvil Legible y Sintetizado (iPhone 17e & Pixel 7) - Set de 18 iconos pixel art 32x32, TopBar modular con chips de recursos y bases, Action Cards con retratos y costes destacados, Target Frame con 4 badges de combate y textos grandes (~3.5k tokens)",
