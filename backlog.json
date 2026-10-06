@@ -1,23 +1,24 @@
 {
     "project":  "Lore \u0026 Tactics",
     "daily_token_quota_target":  "25%",
-    "current_phase":  14,
-    "agent_status":  "Mina de oro reubicada al flanco derecho, bosque derecho despejado y 2 torres defensivas separadas a 3 casillas del castillo protegiendo los flancos de recursos",
-    "last_updated":  "2026-10-06T07:00:00",
-    "total_estimated_tokens":  "87.5k",
+    "current_phase":  15,
+    "agent_status":  "Overhaul v3 completado: Login con Apple preservado en código y oculto en UI, 11 sprites pixel art de unidades/bases 32x32 integrados, OverworldCanvas rediseñado con mapa ilustrado y sendero, y 8 talentos activos con impacto verificado en BattleSim",
+    "last_updated":  "2026-10-06T07:23:00",
+    "total_estimated_tokens":  "92.0k",
     "links":  {
                   "itch_io":  "https://ms-2.itch.io/lore-tactics",
                   "buymeacoffee":  "https://buymeacoffee.com/juanjosejjb",
                   "github_repo":  "https://github.com/MS-2/Lore-and-Tactics"
               },
     "metrics":  {
-                    "editmode_tests_passed":  "10 / 10",
+                    "editmode_tests_passed":  "14 / 14",
                     "webgl_build_status":  "Operativo en itch.io (HTML5 Portrait - Vertical Lane)",
                     "units_count":  11,
                     "playable_levels":  3,
                     "simulation_tick_rate":  "10 Hz Determinista"
                 },
     "recently_completed":  [
+                               "[2026-10-06] FASE-15: Overhaul de Prototipo v3 - Apple Login oculto de UI (código intacto), set completo de sprites pixel art 32x32 de unidades y bases, rediseño de OverworldCanvas y 8 talentos funcionales en batalla (~4.5k tokens)",
                                "[2026-10-06] FASE-14: Flanco de Recursos \u0026 Perímetro Defensivo - Reubicación de mina de oro a la derecha (x=9), bosque despejado y 2 torres defensivas alejadas a 3 casillas de los flancos del castillo (~2.5k tokens)",
                                "[2026-10-06] FASE-13: Offset de Mundo de Cámara \u0026 BottomDock Compacto (130px) - Despeje completo del grid y Castillo del Reino por encima del dock, tarjetas tácticas compactas de 80px y centrado de carril (~2.8k tokens)",
                                "[2026-10-06] FASE-12: BottomDock Inferior con Pestañas \u0026 Safe Area Móvil - Dock scrolleable horizontalmente, adaptación rigurosa a Safe Area (iPhone 17e \u0026 Pixel 7), reducción a 1 mina de oro por jugador y actualización del monitor público (~3.1k tokens)",
