@@ -21,7 +21,7 @@
       --purple: #a855f7;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); padding: 24px 16px; max-width: 1080px; margin: 0 auto; line-height: 1.6; }
+    body { background-color: var(--bg); color: var(--text); padding: 24px 16px; max-width: 1120px; margin: 0 auto; line-height: 1.6; }
 
     /* Header */
     header { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
@@ -44,12 +44,13 @@
     .btn-itch { background: #fa5c5c; color: #fff; box-shadow: 0 4px 14px rgba(250, 92, 92, 0.35); }
     .btn-bmc { background: #ffdd00; color: #000; box-shadow: 0 4px 14px rgba(255, 221, 0, 0.35); }
     .btn-github { background: #24292e; color: #fff; border: 1px solid #444d56; }
+    .btn-monitor { background: #3b82f6; color: #fff; }
 
     /* Stats Grid */
-    .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px; }
     .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
     .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
-    .stat-value { font-size: 1.4rem; font-weight: 800; color: #fff; }
+    .stat-value { font-size: 1.35rem; font-weight: 800; color: #fff; }
     .stat-highlight { color: var(--gold); }
 
     /* Nav Tabs */
@@ -64,13 +65,13 @@
     .section-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
 
     /* Gallery */
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-bottom: 28px; }
     .gallery-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
     .gallery-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
-    .gallery-thumb { width: 100%; height: 200px; object-fit: cover; background: #000; display: block; border-bottom: 1px solid var(--border); }
+    .gallery-thumb { width: 100%; height: 210px; object-fit: cover; background: #000; display: block; border-bottom: 1px solid var(--border); }
     .gallery-info { padding: 14px; }
-    .gallery-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .gallery-desc { font-size: 0.85rem; color: var(--text-muted); }
+    .gallery-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .gallery-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
 
     /* Tutorial & Documentation Cards */
     .guide-step { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 8px; padding: 18px; margin-bottom: 16px; }
@@ -80,6 +81,15 @@
     .step-body { font-size: 0.9rem; color: #cbd5e1; }
     .step-body ul { padding-left: 20px; margin-top: 8px; }
     .step-body li { margin-bottom: 4px; }
+
+    /* Audit & Benchmark Widgets */
+    .audit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .audit-score-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(20, 24, 36, 0.95) 100%); border: 1px solid var(--green); border-radius: 12px; padding: 20px; text-align: center; }
+    .audit-score-num { font-size: 3.5rem; font-weight: 900; color: var(--green); line-height: 1; margin: 10px 0; }
+    .radar-bar-container { margin-bottom: 12px; }
+    .radar-bar-header { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+    .radar-bar-bg { width: 100%; height: 8px; background: #1a2030; border-radius: 4px; overflow: hidden; }
+    .radar-bar-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--gold)); border-radius: 4px; }
 
     /* Tables */
     .table-container { overflow-x: auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 20px; }
@@ -92,6 +102,14 @@
     /* Timeline Items */
     .timeline-item { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
     .timeline-text { font-size: 0.9rem; color: #cbd5e1; }
+
+    /* Roadmap Grid */
+    .roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+    .roadmap-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+    .roadmap-badge { display: inline-block; font-size: 0.7rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+    .badge-high { background: rgba(239, 68, 68, 0.2); color: var(--red); border: 1px solid var(--red); }
+    .badge-mid { background: rgba(255, 205, 117, 0.2); color: var(--gold); border: 1px solid var(--gold); }
+    .badge-low { background: rgba(59, 130, 246, 0.2); color: var(--blue); border: 1px solid var(--blue); }
 
     /* Lightbox Modal */
     .lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px; }
@@ -108,11 +126,11 @@
     <div class="header-top">
       <div>
         <h1 class="brand-title">LORE <span class="gold">&</span> TACTICS</h1>
-        <div class="brand-subtitle">Tactical Auto-Battler RTS — Dev Monitor & Portal Oficial</div>
+        <div class="brand-subtitle">Tactical Auto-Battler RTS — Dev Monitor & Portal Oficial (v1.2 Alfa Estable)</div>
       </div>
       <div class="status-badge">
         <span class="status-dot"></span>
-        <span id="agentStatusText">Prototipo Jugable WebGL Operativo</span>
+        <span id="agentStatusText">v1.2 Alfa Estable — Calificación Técnica 8.8/10</span>
       </div>
     </div>
   </header>
@@ -120,20 +138,23 @@
   <!-- Support & Links Banner -->
   <div class="support-card">
     <div class="support-header">
-      <div class="support-title">⚔️ Juega el Prototipo y Apoya el Desarrollo</div>
+      <div class="support-title">⚔️ Prototipo Jugable WebGL & Enlaces del Proyecto</div>
     </div>
     <div class="support-desc">
-      RTS táctico sobre cuadrícula en tiempo real con invocación estratégica, economía dual (oro y madera) y combate automatizado estilo Fire Emblem. Diseñado para dispositivos móviles y testeable en navegadores WebGL.
+      RTS táctico sobre cuadrícula con simulación C# determinista (10 Hz), economía dual activa (oro y madera con aldeanos autónomos y aserradero), síntesis de audio procedural NES 2A03 y combate automatizado estilo Fire Emblem GBA. Diseñado para control táctil con una sola mano en formato vertical.
     </div>
     <div class="support-buttons">
       <a href="https://ms-2.itch.io/lore-tactics" target="_blank" rel="noopener" class="btn btn-itch">
-        🎮 Jugar en Itch.io
+        🎮 Jugar en Itch.io (WebGL)
       </a>
       <a href="https://buymeacoffee.com/juanjosejjb" target="_blank" rel="noopener" class="btn btn-bmc">
         ☕ Invítame un Café en BuyMeACoffee
       </a>
       <a href="https://github.com/MS-2/Lore-and-Tactics" target="_blank" rel="noopener" class="btn btn-github">
-        📂 Ver Repositorio en GitHub
+        📂 Código del Juego (GitHub)
+      </a>
+      <a href="https://github.com/MS-2/lore-and-tactics-monitor" target="_blank" rel="noopener" class="btn btn-monitor">
+        📊 Repositorio del Monitor
       </a>
     </div>
   </div>
@@ -141,70 +162,218 @@
   <!-- Key Metrics -->
   <div class="grid-stats">
     <div class="stat-card">
+      <div class="stat-label">Auditoría & Calificación</div>
+      <div class="stat-value stat-highlight" id="auditValue">8.8 / 10</div>
+    </div>
+    <div class="stat-card">
       <div class="stat-label">Pruebas EditMode</div>
-      <div class="stat-value stat-highlight" id="testsValue">10 / 10 Pasadas</div>
+      <div class="stat-value stat-highlight" id="testsValue">25 / 25 Pasadas</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Simulación de Batalla</div>
-      <div class="stat-value">10 Hz C# Puro</div>
+      <div class="stat-label">Campaña y Biomas</div>
+      <div class="stat-value">10 Niveles (4 Biomas)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Unidades & Facciones</div>
-      <div class="stat-value stat-highlight">11 Unidades</div>
+      <div class="stat-label">Catálogo de Unidades</div>
+      <div class="stat-value stat-highlight">19 Arquetipos</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Estado de Build</div>
-      <div class="stat-value" style="color: var(--green);">WebGL Listo</div>
+      <div class="stat-label">Motor de Audio</div>
+      <div class="stat-value" style="color: var(--green);">NES 2A03 Chiptune</div>
     </div>
   </div>
 
   <!-- Tabs Navigation -->
   <div class="nav-tabs">
     <button class="tab-btn active" onclick="showTab('gallery')">📸 Capturas del Juego</button>
+    <button class="tab-btn" onclick="showTab('audit')">📊 Benchmark & Auditoría (8.8/10)</button>
     <button class="tab-btn" onclick="showTab('guide')">📖 Cómo Jugar (Tutorial)</button>
-    <button class="tab-btn" onclick="showTab('bestiary')">⚔️ Facciones & Unidades</button>
+    <button class="tab-btn" onclick="showTab('bestiary')">⚔️ Facciones & Bestiario</button>
     <button class="tab-btn" onclick="showTab('architecture')">🏗️ Arquitectura Técnica</button>
-    <button class="tab-btn" onclick="showTab('devlog')">📜 DevLog & Hitos</button>
+    <button class="tab-btn" onclick="showTab('devlog')">📜 DevLog & Roadmap</button>
   </div>
 
   <!-- Tab: Gallery -->
   <div id="tab-gallery" class="content-section active">
-    <h2 class="section-title">🖼️ Galería de Capturas In-Game (Build WebGL)</h2>
+    <h2 class="section-title">🖼️ Galería de Capturas In-Game (Build WebGL v1.2)</h2>
     <div class="gallery-grid">
       <div class="gallery-card" onclick="openLightbox('screenshots/01_login.png')">
         <img src="screenshots/01_login.png" class="gallery-thumb" alt="Pantalla de Login">
         <div class="gallery-info">
-          <div class="gallery-title">1. Pantalla de Acceso & Autenticación</div>
-          <div class="gallery-desc">Inicio de sesión simulado compatible con Google y Apple con persistencia local.</div>
+          <div class="gallery-title">1. Acceso & Autenticación</div>
+          <div class="gallery-desc">Inicio de sesión simulado compatible con Google/Apple y persistencia local Supabase/Guest.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/02_overworld.png')">
         <img src="screenshots/02_overworld.png" class="gallery-thumb" alt="Mapa de Campaña Overworld">
         <div class="gallery-info">
-          <div class="gallery-title">2. Campaña: Mapa del Overworld</div>
-          <div class="gallery-desc">Selección de misiones con progresión de niveles desbloqueables y perfiles activos.</div>
+          <div class="gallery-title">2. Campaña: Mapa del Overworld (10 Niveles)</div>
+          <div class="gallery-desc">Overworld con 10 misiones, 4 biomas, 2 jefes zonales y accesos al Mercado, Talentos, Bestiario y Ajustes.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/03_battle.png')">
         <img src="screenshots/03_battle.png" class="gallery-thumb" alt="Campo de Batalla RTS Vertical">
         <div class="gallery-info">
           <div class="gallery-title">3. Cuadrícula de Batalla Vertical & HUD Móvil</div>
-          <div class="gallery-desc">Carril vertical 9:16 con TopBar modular de chips, iconos pixel art y castillo abajo.</div>
+          <div class="gallery-desc">Carril vertical 9:16 con TopBar modular de chips, iconos pixel art y despliegue rápido.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/04_gameplay.png')">
         <img src="screenshots/04_gameplay.png" class="gallery-thumb" alt="Unidades y Recolección en Acción">
         <div class="gallery-info">
-          <div class="gallery-title">4. Recolección Autónoma & Badges de Inspección</div>
-          <div class="gallery-desc">Inspección de tropas con 4 badges de combate (⚔️, 🛡️, 🎯, 👟) y descripciones sintetizadas.</div>
+          <div class="gallery-title">4. Recolección Autónoma & Badges</div>
+          <div class="gallery-desc">Inspección de tropas con 4 badges de combate (⚔️, 🛡️, 🎯, 👟) y asignación inteligente a minas/árboles.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/05_mobile_dock_tabs.png')">
         <img src="screenshots/05_mobile_dock_tabs.png" class="gallery-thumb" alt="BottomDock con Tabs y Safe Area">
         <div class="gallery-info">
-          <div class="gallery-title">5. BottomDock Inferior con Pestañas & Safe Area Móvil</div>
-          <div class="gallery-desc">Dock inferior scrolleable horizontalmente respetando el Safe Area móvil (home bar), con 1 mina de oro por jugador.</div>
+          <div class="gallery-title">5. BottomDock Inferior con Pestañas</div>
+          <div class="gallery-desc">Dock scrolleable con pestañas [TODO / TROPAS / ECO] adaptado ergonómicamente a Safe Area móvil.</div>
         </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/06_settings_modal.png')">
+        <img src="screenshots/06_settings_modal.png" class="gallery-thumb" alt="Modal Unificado de Ajustes">
+        <div class="gallery-info">
+          <div class="gallery-title">6. Modal Unificado de Ajustes</div>
+          <div class="gallery-desc">Controles de volumen de música/SFX, silenciador general, acceso al Bestiario e iconografía pixel art en Overworld y Batalla.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/07_bestiary_modal.png')">
+        <img src="screenshots/07_bestiary_modal.png" class="gallery-thumb" alt="Bestiario Táctico & Lore">
+        <div class="gallery-info">
+          <div class="gallery-title">7. Bestiario Táctico & Lore de IA</div>
+          <div class="gallery-desc">Consulta in-game de estadísticas, narrativa, lógica de inteligencia artificial y prioridades de combate de cada unidad.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/08_talent_tree.png')">
+        <img src="screenshots/08_talent_tree.png" class="gallery-thumb" alt="Árbol de Talentos WoW">
+        <div class="gallery-info">
+          <div class="gallery-title">8. Árbol de Talentos Multirama (WoW)</div>
+          <div class="gallery-desc">4 ramas de progresión persistente: Armas, Sagrado, Ingeniería y Liderazgo con dependencias jerárquicas e iconos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Audit & Benchmark (from 0075715b-7f1a-4411-b50e-c83e61959182) -->
+  <div id="tab-audit" class="content-section">
+    <h2 class="section-title">📊 Auditoría Técnica & Benchmark Competitivo (v1.2 Alfa Estable)</h2>
+
+    <div class="audit-grid">
+      <div class="audit-score-card">
+        <div style="font-size: 0.9rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Calificación Global</div>
+        <div class="audit-score-num">8.8<span style="font-size: 1.8rem; color: #8b9bb4;">/10</span></div>
+        <div style="font-size: 0.85rem; color: #cbd5e1;">Vertical Slice Alfa Maduro (+0.5 vs v1.0)</div>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; color: var(--gold);">Radar de Calidad Técnica y Diseño</div>
+        <div class="radar-bar-container">
+          <div class="radar-bar-header"><span>Arquitectura y Código</span><span style="color: var(--gold);">9.6 / 10</span></div>
+          <div class="radar-bar-bg"><div class="radar-bar-fill" style="width: 96%;"></div></div>
+        </div>
+        <div class="radar-bar-container">
+          <div class="radar-bar-header"><span>Rendimiento y Huella (< 20MB)</span><span style="color: var(--gold);">9.5 / 10</span></div>
+          <div class="radar-bar-bg"><div class="radar-bar-fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="radar-bar-container">
+          <div class="radar-bar-header"><span>Audio Algorítmico (NES 2A03)</span><span style="color: var(--gold);">9.2 / 10</span></div>
+          <div class="radar-bar-bg"><div class="radar-bar-fill" style="width: 92%;"></div></div>
+        </div>
+        <div class="radar-bar-container">
+          <div class="radar-bar-header"><span>Profundidad Estratégica (Macro RTS)</span><span style="color: var(--gold);">8.8 / 10</span></div>
+          <div class="radar-bar-bg"><div class="radar-bar-fill" style="width: 88%;"></div></div>
+        </div>
+        <div class="radar-bar-container">
+          <div class="radar-bar-header"><span>Game Feel (White-flash / Screenshake)</span><span style="color: var(--gold);">8.2 / 10</span></div>
+          <div class="radar-bar-bg"><div class="radar-bar-fill" style="width: 82%;"></div></div>
+        </div>
+        <div class="radar-bar-container">
+          <div class="radar-bar-header"><span>Contenido y Progresión (10 Niveles)</span><span style="color: var(--gold);">8.3 / 10</span></div>
+          <div class="radar-bar-bg"><div class="radar-bar-fill" style="width: 83%;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparative Table -->
+    <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 12px;">⚔️ Benchmark Frente a Referentes del Mercado</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Dimensión</th>
+            <th style="color: var(--gold);">Lore & Tactics</th>
+            <th>Clash Royale (Supercell)</th>
+            <th>Warcraft Rumble (Blizzard)</th>
+            <th>Stick War: Legacy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Paradigma</b></td>
+            <td><b>RTS Auto-battler con macroeconomía</b></td>
+            <td>Arena de cartas PvP reactiva</td>
+            <td>Tower Offense / PvE Heroico</td>
+            <td>RTS de carril 2D clásico</td>
+          </tr>
+          <tr>
+            <td><b>Gestión de Recursos</b></td>
+            <td><b>Doble activo (Oro + Madera)</b> con aldeanos y aserradero</td>
+            <td>Elixir pasivo autogenerado (1-10)</td>
+            <td>Oro pasivo + Kobolds de mina</td>
+            <td>Mineros de oro manuales/auto</td>
+          </tr>
+          <tr>
+            <td><b>Control en Batalla</b></td>
+            <td><b>Posturas colectivas + Despliegue táctico vertical</b></td>
+            <td>Colocación libre en arena 2 puentes</td>
+            <td>Invocación en torres/piedras</td>
+            <td>Posturas o posesión individual</td>
+          </tr>
+          <tr>
+            <td><b>Topología del Mapa</b></td>
+            <td><b>Cuadrícula vertical, 4 biomas, barricadas, campamentos</b></td>
+            <td>Campo simétrico de 2 puentes fijos</td>
+            <td>Mapas lineales con desniveles</td>
+            <td>Línea horizontal continua 1D</td>
+          </tr>
+          <tr>
+            <td><b>Peso del Build</b></td>
+            <td><b>~18 MB (WebGL) / ~35 MB (Nativo)</b></td>
+            <td>~250 MB</td>
+            <td><b>> 2.5 GB</b> (Descarga pesada)</td>
+            <td>~130 MB</td>
+          </tr>
+          <tr>
+            <td><b>Tiempo de Carga</b></td>
+            <td><b>< 2 segundos</b> en navegador móvil</td>
+            <td>8 - 12 segundos</td>
+            <td>25 - 45 segundos</td>
+            <td>5 - 8 segundos</td>
+          </tr>
+          <tr>
+            <td><b>Monetización</b></td>
+            <td><b>Ética / Sin fricción:</b> Progresión por mérito y Monedas de Guerra</td>
+            <td>Cajas de botín, niveles de cartas</td>
+            <td>Gacha de minis, microtransacciones</td>
+            <td>Anuncios obligatorios</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="guide-step">
+      <div class="step-header">
+        <div class="step-title">Diferenciación Clave & Deuda Técnica Auditada</div>
+        <span class="step-badge">Auditoría Arquitectura</span>
+      </div>
+      <div class="step-body">
+        <ul>
+          <li><b>Herencia RTS en Móvil:</b> Recupera la gestión de trabajadores, madera y aserradero de Warcraft II / Age of Empires, sintetizada para una sola mano en formato portrait.</li>
+          <li><b>Algoritmo Fire Emblem GBA:</b> Las unidades aliadas pueden atravesarse entre sí con coste suave de movimiento, eliminando los atascos en pasillos estrechos.</li>
+          <li><b>Deuda Técnica a Subsanar (Roadmap Prioritario):</b> Optimización de <code>Pathfinder.cs</code> hacia una arquitectura <b>Zero-Alloc A*</b> (reemplazo de listas/diccionarios dinámicos por buffers preasignados) para suprimir los micro-tirones por Garbage Collection en móviles de gama baja.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -219,7 +388,7 @@
         <span class="step-badge">Fase Inicial</span>
       </div>
       <div class="step-body">
-        Al iniciar el juego, selecciona <b>Continuar con Google</b> o <b>Continuar con Apple</b>. Tu progreso y perfil de comandante quedarán guardados. En el mapa del Overworld, selecciona <b>1. Llanura Fronteriza - ¡COMBATIR!</b> para desplegar tus tropas.
+        Al iniciar el juego, selecciona <b>Continuar con Google</b> o juega como invitado. Tu perfil y progreso se almacenan automáticamente. En el mapa del Overworld, recorre los 10 niveles a través de los 4 biomas disponibles (Llanuras, Vados del Río, Ciénaga y Bastión de Azufre).
       </div>
     </div>
 
@@ -229,11 +398,11 @@
         <span class="step-badge">Economía</span>
       </div>
       <div class="step-body">
-        Ganas <b>+2 de oro pasivo por segundo</b> y oro adicional al derribar enemigos. Sin embargo, las unidades de élite requieren <b>madera</b>:
+        Ganas <b>oro pasivo por segundo</b> y oro adicional al derrotar tropas enemigas. Las unidades de élite requieren <b>madera</b>:
         <ul>
-          <li>Invoca <b>Peasants (50g)</b> temprano en la partida.</li>
-          <li>Los campesinos son autónomos: se asignarán automáticamente al recurso con menos trabajadores (árboles o minas de oro).</li>
-          <li>Cada viaje transporta 10 unidades de recurso directamente a tu castillo.</li>
+          <li>Invoca <b>Peasants (50g)</b> temprano: recolectan <b>15 de oro o madera por viaje</b> de forma autónoma.</li>
+          <li>Mejora el <b>Aserradero</b> con oro para incrementar la tasa pasiva de madera en un +10% acumulativo por nivel.</li>
+          <li>Asegura campamentos de monstruos neutrales y cofres de botín para obtener inyecciones inmediatas de oro.</li>
         </ul>
       </div>
     </div>
@@ -244,12 +413,14 @@
         <span class="step-badge">Combate</span>
       </div>
       <div class="step-body">
-        Las unidades se mueven solas hacia la base rival o enemigos en su radio de detección:
+        Las tropas avanzan y eligen objetivos mediante el simulador determinista:
         <ul>
-          <li><b>Knight (Tanque):</b> Absorbe daño frontal y protege a las unidades frágiles.</li>
-          <li><b>Spearman (Anti-Pesados):</b> Inflige <b>daño x2</b> contra Orcos y el Caudillo Orco (unidades con tag Heavy).</li>
-          <li><b>Archer (Rango 4):</b> Dispara con seguridad desde detrás de tus tropas de choque.</li>
-          <li><b>Wizard (Mágico & Área):</b> Su magia ignora la armadura enemiga y causa daño splash en un radio de 1 celda.</li>
+          <li><b>Knight (Tanque):</b> Absorbe ataques frontales con armadura pesada.</li>
+          <li><b>Spearman (Anti-Pesados):</b> Causa <b>daño x2</b> contra Orcos y el Caudillo Orco (etiqueta Heavy).</li>
+          <li><b>Archer (Rango 4):</b> Dispara ráfagas seguras desde detrás de la vanguardia.</li>
+          <li><b>Wizard (Mágico):</b> Ignora la armadura y daña en área (splash radio 1).</li>
+          <li><b>Paladín (Mercadillo):</b> Muro inexpugnable con bendición sagrada.</li>
+          <li><b>Catapulta (Mercadillo):</b> Asedio a 6 celdas de alcance contra grupos compactos.</li>
         </ul>
       </div>
     </div>
@@ -261,27 +432,17 @@
       </div>
       <div class="step-body">
         <ul>
-          <li><b>En Celulares/Tablets:</b> Pellizca la pantalla (pinch) con dos dedos para hacer Zoom In/Out. Arrastra con un dedo para mover la cámara (Pan) por el campo de batalla.</li>
+          <li><b>En Celulares/Tablets:</b> Pellizca (pinch) para Zoom In/Out. Arrastra con un dedo para desplazar la cámara táctica.</li>
           <li><b>En PC/Navegador:</b> Rueda del ratón para Zoom. Clic izquierdo y arrastre para desplazar el mapa.</li>
-          <li><b>Barra de Invocación:</b> Los botones se habilitan dinámicamente cuando tienes los recursos necesarios.</li>
+          <li><b>BottomDock:</b> Pestañas [TODO], [TROPAS] y [ECO] para invocar unidades o mejoras económicas con el pulgar.</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="guide-step">
-      <div class="step-header">
-        <div class="step-title">5. Condición de Victoria</div>
-        <span class="step-badge">Objetivo</span>
-      </div>
-      <div class="step-body">
-        Destruye la <b>Fortaleza de la Horda (1500 HP)</b> antes de que las oleadas enemigas arrasen tu <b>Castillo Real (1500 HP)</b>.
       </div>
     </div>
   </div>
 
   <!-- Tab: Bestiary & Units -->
   <div id="tab-bestiary" class="content-section">
-    <h2 class="section-title">⚔️ Facciones: Reino de Hierro vs Horda Carmesí</h2>
+    <h2 class="section-title">⚔️ Bestiario Táctico & Estadísticas de Combate (v1.2 Balance)</h2>
     <div class="table-container">
       <table>
         <thead>
@@ -305,7 +466,7 @@
             <td>2</td>
             <td>1</td>
             <td>1.5 c/s</td>
-            <td>Recolecta 10 de oro o madera en viajes cíclicos.</td>
+            <td>Recolecta <b>15 de oro o madera</b> por viaje (2s).</td>
           </tr>
           <tr>
             <td><b>Knight</b></td>
@@ -315,7 +476,7 @@
             <td>14</td>
             <td>1</td>
             <td>0.8 c/s</td>
-            <td>Tanque pesado con armadura 3. Línea frontal.</td>
+            <td>Tanque pesado con armadura 3. Vanguardia.</td>
           </tr>
           <tr>
             <td><b>Spearman</b></td>
@@ -325,7 +486,7 @@
             <td>12</td>
             <td>1</td>
             <td>1.0 c/s</td>
-            <td><b>Bonus x2 vs Heavy</b> (demuele Orcos).</td>
+            <td><b>Bonus x2 vs Heavy</b> (destruye Orcos y Caudillos).</td>
           </tr>
           <tr>
             <td><b>Archer</b></td>
@@ -346,6 +507,26 @@
             <td>3</td>
             <td>0.8 c/s</td>
             <td>Daño mágico (ignora armadura) + Splash (área 1).</td>
+          </tr>
+          <tr>
+            <td><b>Paladín</b></td>
+            <td>Reino</td>
+            <td>150g / 50w</td>
+            <td>320</td>
+            <td>16</td>
+            <td>1</td>
+            <td>0.7 c/s</td>
+            <td>Élite del Mercadillo: 4 de armadura y gran aguante.</td>
+          </tr>
+          <tr>
+            <td><b>Catapulta</b></td>
+            <td>Reino</td>
+            <td>180g / 80w</td>
+            <td>110</td>
+            <td>28</td>
+            <td>6</td>
+            <td>0.5 c/s</td>
+            <td>Élite del Mercadillo: Alcance 6 e impacto en área.</td>
           </tr>
           <tr style="background: rgba(239, 68, 68, 0.05);">
             <td><b>Goblin</b></td>
@@ -381,11 +562,41 @@
             <td><b>Orc Chieftain</b></td>
             <td>Horda</td>
             <td>Bounty: 100g</td>
-            <td>600</td>
+            <td><b>300</b></td>
             <td>35</td>
             <td>1</td>
             <td>0.6 c/s</td>
-            <td>Mini-jefe colosal: Heavy, armadura 4 y golpe en área.</td>
+            <td>Heavy, armadura 4 y golpe en área (salud balanceada -50%).</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.08);">
+            <td><b>Warlord Gorgar</b></td>
+            <td>Horda</td>
+            <td>Bounty: 250g</td>
+            <td>850</td>
+            <td>45</td>
+            <td>1</td>
+            <td>0.6 c/s</td>
+            <td>Jefe Zona 1: Titán cuerpo a cuerpo con impacto demoledor.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.08);">
+            <td><b>Shaman Zuldar</b></td>
+            <td>Horda</td>
+            <td>Bounty: 350g</td>
+            <td>750</td>
+            <td>30</td>
+            <td>4</td>
+            <td>0.5 c/s</td>
+            <td>Jefe Final: Rango 4, daño mágico y splash expansivo.</td>
+          </tr>
+          <tr style="background: rgba(255, 255, 255, 0.03);">
+            <td><b>Barricada</b></td>
+            <td>Neutral</td>
+            <td>-</td>
+            <td>140</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0.0 c/s</td>
+            <td>Obstáculo neutral destructible con armadura 2.</td>
           </tr>
         </tbody>
       </table>
@@ -397,74 +608,102 @@
     <h2 class="section-title">🏗️ Arquitectura Técnica y Patrones de Diseño</h2>
     <div class="guide-step">
       <div class="step-header">
-        <div class="step-title">Bucle Desacoplado: Simulación Pura en C# (10 Hz)</div>
-        <span class="step-badge">Arquitectura</span>
+        <div class="step-title">Simulación Determinista Desacoplada (10 Hz, 0 MonoBehaviour)</div>
+        <span class="step-badge">Core Sim</span>
       </div>
       <div class="step-body">
-        La lógica del juego vive en <code>BattleSim</code> como clases C# estándar independientes de Unity (sin <code>MonoBehaviour</code> ni físicas de Unity):
+        La lógica matemática del juego vive en <code>BattleSim</code> en C# puro:
         <ul>
-          <li><b>Determinismo:</b> El estado del mapa, ocupantes y recursos avanza en ticks fijos de 0.1s (10 Hz).</li>
-          <li><b>Eventos Puros:</b> La simulación dispara eventos (<code>UnitSpawned</code>, <code>UnitMoved</code>, <code>UnitAttacked</code>, <code>BattleEnded</code>) observados por la vista.</li>
-          <li><b>Testabilidad Absoluta:</b> La simulación corre en pruebas unitarias EditMode sin requerir inicializar escenas ni el motor gráfico.</li>
+          <li><b>Determinismo Matemático:</b> Los ticks avanzan cada 0.1s de forma independiente del framerate gráfico.</li>
+          <li><b>Eventos Reactivos:</b> Vistas suscritas a <code>UnitSpawned</code>, <code>UnitMoved</code>, <code>UnitAttacked</code>, <code>BattleEnded</code>.</li>
+          <li><b>Pruebas Automatizadas:</b> Suite de 25 pruebas EditMode con cobertura de combate, economía, pathfinding y condiciones de victoria.</li>
         </ul>
       </div>
     </div>
 
     <div class="guide-step">
       <div class="step-header">
-        <div class="step-title">Contratos de Datos JSON con JsonUtility</div>
-        <span class="step-badge">Data Driven</span>
+        <div class="step-title">Motor de Audio Sintetizado Procedural NES 2A03</div>
+        <span class="step-badge">Chiptune Audio</span>
       </div>
       <div class="step-body">
-        Unidades y niveles residen en <code>Assets/Resources/Data/units.json</code> y <code>levels.json</code>. Esto evita conflictos de GUIDs entre ramas de desarrollo y permite ajustar balance y nuevos mapas modificando texto plano.
+        Implementación procedural completa en <code>ChiptuneSynth.cs</code> y <code>AudioManager.cs</code>:
+        <ul>
+          <li>Genera formas de onda PCM en memoria (canales Pulse con duty cycles 12.5%, 25%, 50%, onda Triangle para bajos y Noise LFSR para percusión).</li>
+          <li>Cero archivos de audio WAV/MP3 en el repositorio, reduciendo drásticamente el tamaño del build WebGL (< 20 MB).</li>
+        </ul>
       </div>
     </div>
 
     <div class="guide-step">
       <div class="step-header">
-        <div class="step-title">Generación de Escenas por Código (Zero Scene Conflicts)</div>
-        <span class="step-badge">SceneBuilder</span>
+        <div class="step-title">Arquitectura Data-Driven & UI Generada por Código</div>
+        <span class="step-badge">Zero Conflicts</span>
       </div>
       <div class="step-body">
-        Las 3 escenas (<code>Login</code>, <code>Overworld</code>, <code>Battle</code>) se autoconstruyen por código mediante <code>SceneBuilder.cs</code>. Cada pantalla inyecta su Canvas, CanvasScaler adaptativo y jerarquía visual en <code>Awake</code>.
+        Toda la UI se construye dinámicamente en <code>Awake</code> con <code>UIFactory.cs</code> sin dependencias de wiring en escenas, asegurando cero conflictos de fusión en Git. Todos los datos de unidades y niveles residen en archivos JSON desacoplados.
       </div>
     </div>
   </div>
 
   <!-- Tab: DevLog -->
   <div id="tab-devlog" class="content-section">
-    <h2 class="section-title">📜 Registro de Hitos & DevLog</h2>
+    <h2 class="section-title">📜 Registro de Hitos & Roadmap Técnico</h2>
+    
     <div id="timelineContainer">
-      <!-- Se carga dinámicamente desde backlog.json o estático de respaldo -->
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-06] FASE-15:</b> Overhaul de Prototipo v3 — Login con Apple preservado en código pero oculto en UI (Google centrado); set de 11 sprites pixel art 32x32 para unidades y bases; rediseño de OverworldCanvas (fondo de mapa táctico, sendero conector, tarjetas tácticas); y expansión a 8 talentos con impacto directo en el simulador y tests.</div>
+        <div class="timeline-text"><b>[2026-10-07] FASE-20:</b> Rebalanceo Numérico & Modal Unificado de Ajustes — Ajustes accesibles tanto en Overworld como en Batalla con controles de volumen y silenciador con iconos pixel art; acceso directo bidireccional al Bestiario; rebalanceo del Orc Chieftain (HP reducida de 600 a 300), aldeanos a 15 de oro/viaje y aserradero +10% pasivo. Compilación WebGL y despliegue a itch.io.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-06] FASE-14:</b> Flanco de Recursos & Perímetro Defensivo — Reubicación de la mina de oro al flanco derecho despejado (x=9), despeje del bosque y separación de las 2 torres defensivas a 3 casillas del castillo para cobertura perimetral de recursos.</div>
+        <div class="timeline-text"><b>[2026-10-07] FASE-19:</b> Bestiario & Lore Táctico In-Game — Modal interactivo con narrativa, descripciones de inteligencia artificial, debilidades y contadores tácticos de todas las tropas.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-06] FASE-13:</b> Offset de Mundo de Cámara & BottomDock Compacto — Despeje completo de la cuadrícula y Castillo del Reino por encima del dock, tarjetas de invocación compactas y centrado de carril.</div>
+        <div class="timeline-text"><b>[2026-10-07] FASE-18:</b> Campaña de 10 Niveles & Jefes de Zona — Expansión a 4 biomas (Llanuras, Vados del Río, Ciénaga, Bastión de Azufre) con 2 jefes únicos (Warlord Gorgar y Shaman Zuldar), campamentos neutrales y barricadas destructibles.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-06] FASE-12:</b> BottomDock Inferior con Pestañas & Safe Area Móvil — Dock táctico scrolleable, adaptación a Safe Area móvil y balance a 1 sola mina de oro por facción.</div>
+        <div class="timeline-text"><b>[2026-10-06] FASE-17:</b> Mercadillo de Aldoria & Árbol de Talentos WoW — Bazar de Maese Roderick para comprar unidades de élite (Paladín y Catapulta) con Monedas de Guerra; árbol de talentos con 4 ramas (Armas, Sagrado, Ingeniería, Liderazgo).</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-06] FASE-05:</b> Biblia de Identidad Visual & Narrativa conjunta (Lore + Arte Conceptual), paleta canónica 4-bit y fichas de diseño de unidades.</div>
+        <div class="timeline-text"><b>[2026-10-06] FASE-16:</b> Audio Chiptune Procedural NES 2A03 & Combat Juice — Sintetizador procedural en C# sin archivos WAV (3 temas, 9 SFX), destellos de daño white-flash (0.08s), micro-screenshake en impactos y números flotantes.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-05] FASE-04:</b> Portal GitHub Pages, Galería de Capturas, Documentación Técnica y Guía de Juego.</div>
+        <div class="timeline-text"><b>[2026-10-06] FASE-15:</b> Overhaul de Prototipo v3 — Apple Login oculto en UI (código preservado); set completo de 11 sprites pixel art 32x32 para unidades y bases; rediseño de OverworldCanvas y 8 talentos activos en batalla.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-05] FASE-03:</b> Compilación y Verificación de Build WebGL en Navegador Local (WASM + Assets).</div>
+        <div class="timeline-text"><b>[2026-10-06] FASE-14:</b> Flanco de Recursos & Perímetro Defensivo — Reubicación de mina de oro a la derecha (x=9), bosque despejado y torres defensivas a 3 casillas del castillo.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-05] FASE-02:</b> Generación Automática de Escenas y Suite de Pruebas EditMode (10/10 tests pasados).</div>
+        <div class="timeline-text"><b>[2026-10-06] FASE-13:</b> Offset de Mundo de Cámara & BottomDock Compacto (130px) — Despeje completo del grid y Castillo del Reino por encima del dock, tarjetas tácticas compactas de 80px y centrado de carril.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-05] FASE-01:</b> Implementación de Simulación de Batalla C# Puro, A* Pathfinder, Economía y Vistas Desacopladas.</div>
+        <div class="timeline-text"><b>[2026-10-06] FASE-12:</b> BottomDock Inferior con Pestañas & Safe Area Móvil — Dock scrolleable, Safe Area (iPhone 17e & Pixel 7) y balance a 1 mina de oro por jugador.</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-text"><b>[2026-10-05] FASE-00:</b> Arquitectura del Proyecto, Reglas de Agentes, Definición de Datos JSON y Setup de Repositorio en GitHub.</div>
+        <div class="timeline-text"><b>[2026-10-05] FASE-01 a 11:</b> Arquitectura base, simulación desacoplada C#, A* Pathfinder, contratos JSON, vistas reactivas, HUD con tabs y suites de pruebas EditMode iniciales.</div>
+      </div>
+    </div>
+
+    <h3 style="font-size: 1.1rem; color: #fff; margin-top: 24px; margin-bottom: 12px;">🗺️ Roadmap Priorizado de Desarrollo</h3>
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <span class="roadmap-badge badge-high">Prioridad Alta</span>
+        <div style="font-weight: 700; color: #fff; margin-bottom: 6px;">TASK-009: Zero-Alloc A* Pathfinding</div>
+        <div style="font-size: 0.85rem; color: #cbd5e1;">Reemplazar colecciones dinámicas de A* por arrays estáticos indexados por celda para erradicar el GC churn en dispositivos móviles modestos.</div>
+      </div>
+      <div class="roadmap-card">
+        <span class="roadmap-badge badge-mid">Prioridad Media</span>
+        <div style="font-weight: 700; color: #fff; margin-bottom: 6px;">TASK-010: Animación de Sprites (2-3 Frames)</div>
+        <div style="font-size: 0.85rem; color: #cbd5e1;">Incorporar ciclos básicos de caminado y fotogramas de ataque para dotar al pixel art de vida orgánica.</div>
+      </div>
+      <div class="roadmap-card">
+        <span class="roadmap-badge badge-mid">Prioridad Media</span>
+        <div style="font-weight: 700; color: #fff; margin-bottom: 6px;">TASK-011: Modo Supervivencia / Horda Infinita</div>
+        <div style="font-size: 0.85rem; color: #cbd5e1;">Oleadas procedurales crecientes con tabla de clasificación online en Supabase para maximizar la rejugabilidad endgame.</div>
+      </div>
+      <div class="roadmap-card">
+        <span class="roadmap-badge badge-low">Prioridad Baja</span>
+        <div style="font-weight: 700; color: #fff; margin-bottom: 6px;">TASK-012: Exportación Móvil Nativa & Háptica</div>
+        <div style="font-size: 0.85rem; color: #cbd5e1;">Configurar compilación directa para Android (APK/AAB) e iOS con respuesta de vibración háptica en impactos y órdenes.</div>
       </div>
     </div>
   </div>
@@ -480,7 +719,8 @@
     <p style="margin-top: 6px;">
       <a href="https://ms-2.itch.io/lore-tactics" target="_blank" style="color: var(--gold); text-decoration: none;">Itch.io</a> &bull; 
       <a href="https://buymeacoffee.com/juanjosejjb" target="_blank" style="color: var(--gold); text-decoration: none;">BuyMeACoffee</a> &bull; 
-      <a href="https://github.com/MS-2/Lore-and-Tactics" target="_blank" style="color: var(--gold); text-decoration: none;">GitHub</a>
+      <a href="https://github.com/MS-2/Lore-and-Tactics" target="_blank" style="color: var(--gold); text-decoration: none;">GitHub Juego</a> &bull; 
+      <a href="https://github.com/MS-2/lore-and-tactics-monitor" target="_blank" style="color: var(--gold); text-decoration: none;">GitHub Monitor</a>
     </p>
   </footer>
 
@@ -507,7 +747,7 @@
       document.getElementById('lightbox').classList.remove('active');
     }
 
-    // Cargar datos dinámicos si existe backlog.json
+    // Cargar datos dinámicos desde backlog.json
     fetch('backlog.json')
       .then(res => res.json())
       .then(data => {
@@ -516,6 +756,9 @@
         }
         if (data.metrics && data.metrics.editmode_tests_passed) {
           document.getElementById('testsValue').innerText = data.metrics.editmode_tests_passed + ' Pasadas';
+        }
+        if (data.metrics && data.metrics.audit_score) {
+          document.getElementById('auditValue').innerText = data.metrics.audit_score.split(' ')[0] + ' / 10';
         }
       })
       .catch(() => {});
