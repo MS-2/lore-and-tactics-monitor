@@ -1,10 +1,10 @@
 {
     "project": "Lore & Tactics",
     "daily_token_quota_target": "25%",
-    "current_phase": 20,
-    "agent_status": "v1.2 Alfa Estable en itch.io: Calificación 8.8/10 en auditoría de benchmark. 25/25 tests EditMode superados, 10 niveles jugables con 2 jefes de zona, Mercadillo de Tropas, Árbol de Talentos WoW, Bestiario con IA/Lore, Ajustes unificados con iconos pixel art, audio procedural NES 2A03 y rebalanceo de unidades.",
-    "last_updated": "2026-10-07T09:00:00",
-    "total_estimated_tokens": "135.0k",
+    "current_phase": 21,
+    "agent_status": "v1.2 Alfa Estable en itch.io: Calificación 8.8/10 en auditoría de benchmark. 25/25 tests EditMode superados, Mapamundi Continental 4-bit con Pan/Zoom, Tiendas de Potenciadores, Mercadillo de Tropas, Árbol de Talentos WoW, Bestiario con IA/Lore, Ajustes universales en todas las pantallas y audio procedural NES.",
+    "last_updated": "2026-10-07T12:05:00",
+    "total_estimated_tokens": "142.0k",
     "links": {
         "itch_io": "https://ms-2.itch.io/lore-tactics",
         "buymeacoffee": "https://buymeacoffee.com/juanjosejjb",
@@ -30,6 +30,7 @@
         "sprite_animation": "6.0 / 10"
     },
     "recently_completed": [
+        "[2026-10-07] FASE-21: Mapamundi Continental 4-bit, Potenciadores & Navegación Global de Ajustes/Bestiario - Mapamundi con pan/zoom táctil, tiendas de potenciadores permanentes por emplazamiento, flujo bidireccional Login > Overworld > Battle > Market y acceso universal a Ajustes y Bestiario desde todas las pantallas (~5.2k tokens)",
         "[2026-10-07] FASE-20: Rebalanceo Numérico & Modal Unificado de Ajustes - Ajustes accesibles en Overworld y Batalla con iconos pixel art, enlace directo al Bestiario, salud del Orc Chieftain reducida al 50% (300 HP), Peasant +5 oro por viaje (15 oro) y aserradero +10% madera pasiva (~4.5k tokens)",
         "[2026-10-07] FASE-19: Bestiario & Lore Táctico - Modal interactivo in-game con trasfondo de unidades, arquetipos de IA, debilidades y contadores tácticos (~3.8k tokens)",
         "[2026-10-07] FASE-18: Campaña de 10 Niveles & Jefes de Zona - Expansión a 4 biomas (Llanura, Río, Pantano, Volcán), 2 jefes de zona únicos (Warlord Gorgar y Shaman Zuldar) y obstáculos destructibles (~6.2k tokens)",
