@@ -1,23 +1,24 @@
 {
     "project":  "Lore \u0026 Tactics",
     "daily_token_quota_target":  "25%",
-    "current_phase":  15,
-    "agent_status":  "Fase 4: Modales mutuamente excluyentes y mina aliada protegida tras torres de defensa",
-    "last_updated":  "2026-10-07T19:35:12",
-    "total_estimated_tokens":  "92.0k",
+    "current_phase":  16,
+    "agent_status":  "Fase 16: Guardado/Carga Local en IndexedDB, Selector de 20 Héroes y 33/33 Tests EditMode",
+    "last_updated":  "2026-10-09T16:34:26",
+    "total_estimated_tokens":  "115.0k",
     "links":  {
                   "itch_io":  "https://ms-2.itch.io/lore-tactics",
                   "buymeacoffee":  "https://buymeacoffee.com/juanjosejjb",
                   "github_repo":  "https://github.com/MS-2/Lore-and-Tactics"
               },
     "metrics":  {
-                    "editmode_tests_passed":  "14 / 14",
+                    "editmode_tests_passed":  "33 / 33 (100% pasando)",
                     "webgl_build_status":  "Operativo en itch.io (HTML5 Portrait - Vertical Lane)",
-                    "units_count":  11,
-                    "playable_levels":  3,
+                    "units_count":  37,
+                    "playable_levels":  10,
                     "simulation_tick_rate":  "10 Hz Determinista"
                 },
     "recently_completed":  [
+                               "[2026-10-09] FASE-16: Sistema de Guardado y Carga Local (IndexedDB) \u0026 Selector de 20 Héroes Comandantes - Botón \u0027Guardar Partida (Local)\u0027 y \u0027Cargar Partida (Local)\u0027 en Ajustes con persistencia en PlayerPrefs (IndexedDB de navegador sin límite de 5MB), pantalla de Login con botón \u0027JUGAR DIRECTAMENTE\u0027 (local) y distinción explícita de guardado en la nube mock de Google, selector interactivo de 20 héroes comandantes con rasgos visuales y auras, y suite de 6 pruebas unitarias SaveLoadTests (33/33 tests EditMode verdes).",
                                "[2026-10-06] FASE-15: Overhaul de Prototipo v3 - Apple Login oculto de UI (código intacto), set completo de sprites pixel art 32x32 de unidades y bases, rediseño de OverworldCanvas y 8 talentos funcionales en batalla (~4.5k tokens)",
                                "[2026-10-06] FASE-14: Flanco de Recursos \u0026 Perímetro Defensivo - Reubicación de mina de oro a la derecha (x=9), bosque despejado y 2 torres defensivas alejadas a 3 casillas de los flancos del castillo (~2.5k tokens)",
                                "[2026-10-06] FASE-13: Offset de Mundo de Cámara \u0026 BottomDock Compacto (130px) - Despeje completo del grid y Castillo del Reino por encima del dock, tarjetas tácticas compactas de 80px y centrado de carril (~2.8k tokens)",

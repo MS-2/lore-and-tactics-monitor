@@ -88,6 +88,16 @@
     td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: #cbd5e1; }
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: var(--card-hover); }
+    .unit-sprite-cell { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #fff; }
+    .unit-sprite-img { width: 34px; height: 34px; image-rendering: pixelated; object-fit: contain; background: rgba(0,0,0,0.35); border-radius: 6px; padding: 2px; border: 1px solid var(--border); flex-shrink: 0; }
+    .hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; margin-top: 16px; margin-bottom: 24px; }
+    .hero-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px; display: flex; gap: 12px; align-items: flex-start; transition: transform 0.2s, border-color 0.2s; }
+    .hero-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .hero-card-img { width: 44px; height: 44px; image-rendering: pixelated; object-fit: contain; background: rgba(0,0,0,0.45); border-radius: 8px; border: 1px solid var(--gold); flex-shrink: 0; }
+    .hero-name { font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 2px; }
+    .hero-meta { font-size: 0.75rem; color: var(--green); font-weight: 600; margin-bottom: 4px; }
+    .hero-desc { font-size: 0.8rem; color: #cbd5e1; line-height: 1.4; }
+    .hero-aura { font-size: 0.75rem; color: #f1c40f; margin-top: 4px; font-style: italic; }
 
     /* Timeline Items */
     .timeline-item { background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
@@ -142,7 +152,7 @@
   <div class="grid-stats">
     <div class="stat-card">
       <div class="stat-label">Pruebas EditMode</div>
-      <div class="stat-value stat-highlight" id="testsValue">10 / 10 Pasadas</div>
+      <div class="stat-value stat-highlight" id="testsValue">33 / 33 Pasadas</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Simulación de Batalla</div>
@@ -150,11 +160,11 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">Unidades & Facciones</div>
-      <div class="stat-value stat-highlight">11 Unidades</div>
+      <div class="stat-value stat-highlight">17 Tropas + 20 Héroes</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Estado de Build</div>
-      <div class="stat-value" style="color: var(--green);">WebGL Listo</div>
+      <div class="stat-label">Campaña & Niveles</div>
+      <div class="stat-value" style="color: var(--green);">10 Misiones Continentales</div>
     </div>
   </div>
 
@@ -222,36 +232,57 @@
       <div class="gallery-card" onclick="openLightbox('screenshots/01_login.png')">
         <img src="screenshots/01_login.png" class="gallery-thumb" alt="Pantalla de Login">
         <div class="gallery-info">
-          <div class="gallery-title">1. Pantalla de Acceso & Autenticación</div>
-          <div class="gallery-desc">Inicio de sesión simulado compatible con Google y Apple con persistencia local.</div>
+          <div class="gallery-title">1. Pantalla de Acceso (Nube Mock vs. Local)</div>
+          <div class="gallery-desc">Acceso directo 'Jugar Directamente' con guardado local persistente en IndexedDB o inicio simulado con Google.</div>
         </div>
       </div>
-      <div class="gallery-card" onclick="openLightbox('screenshots/02_overworld.png')">
-        <img src="screenshots/02_overworld.png" class="gallery-thumb" alt="Mapa de Campaña Overworld">
+      <div class="gallery-card" onclick="openLightbox('screenshots/09_continental_overworld_map.png')">
+        <img src="screenshots/09_continental_overworld_map.png" class="gallery-thumb" alt="Mapamundi Continental">
         <div class="gallery-info">
-          <div class="gallery-title">2. Campaña: Mapa del Overworld</div>
-          <div class="gallery-desc">Selección de misiones con progresión de niveles desbloqueables y perfiles activos.</div>
+          <div class="gallery-title">2. Mapamundi Continental Modular</div>
+          <div class="gallery-desc">Retazos de tiles 4-bit, sendero de rutas animadas, niebla de guerra en zonas de jefe y nodo capital con Héroe.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/06_settings_modal.png')">
+        <img src="screenshots/06_settings_modal.png" class="gallery-thumb" alt="Menú de Ajustes">
+        <div class="gallery-info">
+          <div class="gallery-title">3. Menú de Ajustes (Guardado & Carga Local)</div>
+          <div class="gallery-desc">Botones manuales 'Guardar Partida (Local)' y 'Cargar Partida (Local)' con retroalimentación sonora, selector de héroe y volumen.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/08_hero_selection.png')">
+        <img src="screenshots/08_hero_selection.png" class="gallery-thumb" alt="Selector de Héroes">
+        <div class="gallery-info">
+          <div class="gallery-title">4. Selector de Héroes Comandantes</div>
+          <div class="gallery-desc">Catálogo de 20 arquetipos únicos con peinados característicos, auras luminosas animadas y pasivas de combate.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/03_battle.png')">
         <img src="screenshots/03_battle.png" class="gallery-thumb" alt="Campo de Batalla RTS Vertical">
         <div class="gallery-info">
-          <div class="gallery-title">3. Cuadrícula de Batalla Vertical & HUD Móvil</div>
+          <div class="gallery-title">5. Cuadrícula de Batalla Vertical & HUD Móvil</div>
           <div class="gallery-desc">Carril vertical 9:16 con TopBar modular de chips, iconos pixel art y castillo abajo.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/04_gameplay.png')">
         <img src="screenshots/04_gameplay.png" class="gallery-thumb" alt="Unidades y Recolección en Acción">
         <div class="gallery-info">
-          <div class="gallery-title">4. Recolección Autónoma & Badges de Inspección</div>
+          <div class="gallery-title">6. Recolección Autónoma & Badges de Inspección</div>
           <div class="gallery-desc">Inspección de tropas con 4 badges de combate (⚔️, 🛡️, 🎯, 👟) y descripciones sintetizadas.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/05_mobile_dock_tabs.png')">
         <img src="screenshots/05_mobile_dock_tabs.png" class="gallery-thumb" alt="BottomDock con Tabs y Safe Area">
         <div class="gallery-info">
-          <div class="gallery-title">5. BottomDock Inferior con Pestañas & Safe Area Móvil</div>
+          <div class="gallery-title">7. BottomDock con Pestañas & Safe Area Móvil</div>
           <div class="gallery-desc">Dock inferior scrolleable horizontalmente respetando el Safe Area móvil (home bar), con 1 mina de oro por jugador.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/07_bestiary_modal.png')">
+        <img src="screenshots/07_bestiary_modal.png" class="gallery-thumb" alt="Bestiario de Aldoria">
+        <div class="gallery-info">
+          <div class="gallery-title">8. Compendio & Bestiario de Aldoria</div>
+          <div class="gallery-desc">Fichas de tropas de combate, estadísticas de daño, armadura, rango y comportamiento de IA táctica.</div>
         </div>
       </div>
     </div>
@@ -346,17 +377,17 @@
         </thead>
         <tbody>
           <tr>
-            <td><b>Peasant</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/peasant.png" class="unit-sprite-img" alt="Peasant"><span>Peasant</span></td>
             <td>Reino</td>
             <td>50g</td>
             <td>40</td>
             <td>2</td>
             <td>1</td>
             <td>1.5 c/s</td>
-            <td>Recolecta 10 de oro o madera en viajes cíclicos.</td>
+            <td>Recolecta 15 de oro o madera en viajes cíclicos.</td>
           </tr>
           <tr>
-            <td><b>Knight</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/knight.png" class="unit-sprite-img" alt="Knight"><span>Knight</span></td>
             <td>Reino</td>
             <td>100g / 20w</td>
             <td>220</td>
@@ -366,7 +397,7 @@
             <td>Tanque pesado con armadura 3. Línea frontal.</td>
           </tr>
           <tr>
-            <td><b>Spearman</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/spearman.png" class="unit-sprite-img" alt="Spearman"><span>Spearman</span></td>
             <td>Reino</td>
             <td>75g / 25w</td>
             <td>130</td>
@@ -376,7 +407,7 @@
             <td><b>Bonus x2 vs Heavy</b> (demuele Orcos).</td>
           </tr>
           <tr>
-            <td><b>Archer</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/archer.png" class="unit-sprite-img" alt="Archer"><span>Archer</span></td>
             <td>Reino</td>
             <td>60g / 40w</td>
             <td>70</td>
@@ -386,7 +417,7 @@
             <td>DPS continuo a larga distancia.</td>
           </tr>
           <tr>
-            <td><b>Wizard</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/wizard.png" class="unit-sprite-img" alt="Wizard"><span>Wizard</span></td>
             <td>Reino</td>
             <td>120g / 60w</td>
             <td>60</td>
@@ -395,48 +426,315 @@
             <td>0.8 c/s</td>
             <td>Daño mágico (ignora armadura) + Splash (área 1).</td>
           </tr>
+          <tr>
+            <td class="unit-sprite-cell"><img src="sprites/Units/paladin.png" class="unit-sprite-img" alt="Paladin"><span>Paladín</span></td>
+            <td>Reino</td>
+            <td>150g / 50w</td>
+            <td>320</td>
+            <td>18</td>
+            <td>1</td>
+            <td>0.8 c/s</td>
+            <td>Campeón sagrado acorazado con 4 de armadura. Máxima resistencia.</td>
+          </tr>
+          <tr>
+            <td class="unit-sprite-cell"><img src="sprites/Units/catapult.png" class="unit-sprite-img" alt="Catapult"><span>Catapulta</span></td>
+            <td>Reino</td>
+            <td>180g / 80w</td>
+            <td>90</td>
+            <td>32</td>
+            <td>6</td>
+            <td>0.5 c/s</td>
+            <td>Asedio de alcance extremo con impacto en área masivo.</td>
+          </tr>
+          <tr>
+            <td class="unit-sprite-cell"><img src="sprites/Units/castle.png" class="unit-sprite-img" alt="Castle"><span>Castillo Real</span></td>
+            <td>Reino</td>
+            <td>Base</td>
+            <td>1500</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0 c/s</td>
+            <td>Sede del Reino. Almacén de suministros. Su caída causa derrota.</td>
+          </tr>
+          <tr>
+            <td class="unit-sprite-cell"><img src="sprites/Units/guard_tower.png" class="unit-sprite-img" alt="Guard Tower"><span>Torre de Guardia</span></td>
+            <td>Reino</td>
+            <td>Estructura</td>
+            <td>350</td>
+            <td>12</td>
+            <td>4</td>
+            <td>0 c/s</td>
+            <td>Torre defensiva fortificada con arqueros en la almena.</td>
+          </tr>
           <tr style="background: rgba(239, 68, 68, 0.05);">
-            <td><b>Goblin</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/goblin.png" class="unit-sprite-img" alt="Goblin"><span>Goblin</span></td>
             <td>Horda</td>
             <td>Bounty: 10g</td>
             <td>60</td>
             <td>7</td>
             <td>1</td>
             <td>1.6 c/s</td>
-            <td>Infantería ligera muy rápida y enjambre.</td>
+            <td>Infantería ligera muy rápida y enjambre con dagas dobles.</td>
           </tr>
           <tr style="background: rgba(239, 68, 68, 0.05);">
-            <td><b>Orc</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/orc.png" class="unit-sprite-img" alt="Orc"><span>Orco</span></td>
             <td>Horda</td>
             <td>Bounty: 20g</td>
             <td>180</td>
             <td>16</td>
             <td>1</td>
             <td>0.9 c/s</td>
-            <td>Guerrero pesado (Heavy) con armadura 2.</td>
+            <td>Guerrero pesado (Heavy) con hacha de combate y armadura 2.</td>
           </tr>
           <tr style="background: rgba(239, 68, 68, 0.05);">
-            <td><b>Goblin Archer</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/goblin_archer.png" class="unit-sprite-img" alt="Goblin Archer"><span>Goblin Arquero</span></td>
             <td>Horda</td>
             <td>Bounty: 12g</td>
             <td>55</td>
             <td>8</td>
             <td>4</td>
             <td>1.0 c/s</td>
-            <td>Hostigador a distancia veloz.</td>
+            <td>Hostigador a distancia veloz con flechas venenosas.</td>
           </tr>
           <tr style="background: rgba(239, 68, 68, 0.05);">
-            <td><b>Orc Chieftain</b></td>
+            <td class="unit-sprite-cell"><img src="sprites/Units/orc_chieftain.png" class="unit-sprite-img" alt="Orc Chieftain"><span>Caudillo Orco</span></td>
             <td>Horda</td>
             <td>Bounty: 100g</td>
-            <td>600</td>
+            <td>300</td>
             <td>35</td>
             <td>1</td>
             <td>0.6 c/s</td>
-            <td>Mini-jefe colosal: Heavy, armadura 4 y golpe en área.</td>
+            <td>Mini-jefe colosal: Heavy, armadura 4 y mazo con daño en área.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td class="unit-sprite-cell"><img src="sprites/Units/warlord_gorgar.png" class="unit-sprite-img" alt="Warlord Gorgar"><span>Warlord Gorgar</span></td>
+            <td>Horda</td>
+            <td>Bounty: 150g</td>
+            <td>850</td>
+            <td>38</td>
+            <td>1</td>
+            <td>0.6 c/s</td>
+            <td>Jefe de Zona 1. Titán orco acorazado devastador.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td class="unit-sprite-cell"><img src="sprites/Units/shaman_zuldar.png" class="unit-sprite-img" alt="Shaman Zuldar"><span>Shaman Zuldar</span></td>
+            <td>Horda</td>
+            <td>Bounty: 250g</td>
+            <td>750</td>
+            <td>30</td>
+            <td>4</td>
+            <td>0.65 c/s</td>
+            <td>Jefe de Zona 2. Tormentas arcanas masivas a distancia (splash 2).</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td class="unit-sprite-cell"><img src="sprites/Units/fortress.png" class="unit-sprite-img" alt="Fortress"><span>Fortaleza de la Horda</span></td>
+            <td>Horda</td>
+            <td>Base</td>
+            <td>1500</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0 c/s</td>
+            <td>Bastión fortificado y nido de la Horda. Su caída otorga la victoria.</td>
+          </tr>
+          <tr style="background: rgba(239, 68, 68, 0.05);">
+            <td class="unit-sprite-cell"><img src="sprites/Units/barricade.png" class="unit-sprite-img" alt="Barricade"><span>Barricada</span></td>
+            <td>Horda</td>
+            <td>Estructura</td>
+            <td>140</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0 c/s</td>
+            <td>Empalizada con púas destructible que bloquea el carril.</td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <h3 class="section-title" style="margin-top: 32px;">👑 20 Héroes Comandantes del Reino (Seleccionables)</h3>
+    <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px;">
+      El jugador puede seleccionar a su Héroe Comandante favorito desde el menú de Ajustes para liderar al Reino de Hierro en el mapa y la campaña. Cada héroe cuenta con sprite exclusivo, peinado y rasgo distintivo, aura pixel art y una habilidad pasiva única.
+    </p>
+    <div class="hero-grid">
+      <div class="hero-card">
+        <img src="sprites/Units/hero_01.png" class="hero-card-img" alt="Sir Aurelius">
+        <div>
+          <div class="hero-name">01. Sir Aurelius &bull; Filo de la Corona</div>
+          <div class="hero-meta">Paladín Comandante &bull; Pasiva: Vanguardia Real</div>
+          <div class="hero-desc">+1 de armadura a todas las tropas aliadas al avanzar. Mechón rebelde blanco-plateado sobre pelo oscuro.</div>
+          <div class="hero-aura">✨ Anillo elíptico dorado de 2px con destellos ámbar</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_02.png" class="hero-card-img" alt="Lady Valerie">
+        <div>
+          <div class="hero-name">02. Lady Valerie &bull; La Hoja Plateada</div>
+          <div class="hero-meta">Duelista Ágil &bull; Pasiva: Estocada Precisa</div>
+          <div class="hero-desc">Impacto crítico garantizado cada 4 ataques físicos. Coleta alta ondeante plateada con cinta carmesí.</div>
+          <div class="hero-aura">✨ Runa azul zafiro con chispas celestes orbitando</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_03.png" class="hero-card-img" alt="Gareth">
+        <div>
+          <div class="hero-name">03. Gareth &bull; El Quebrantaescudos</div>
+          <div class="hero-meta">Baluarte Pesado &bull; Pasiva: Muralla Implacable</div>
+          <div class="hero-desc">-35% de daño recibido por unidades pesadas aliadas. Melena rubia cobriza trenzada con cuentas de hierro.</div>
+          <div class="hero-aura">✨ Fracturas doradas en el suelo simulando tierra bendita</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_04.png" class="hero-card-img" alt="Archimago Kaelen">
+        <div>
+          <div class="hero-name">04. Archimago Kaelen &bull; Custodio Estelar</div>
+          <div class="hero-meta">Invocador Arcano &bull; Pasiva: Sobrecarga Mágica</div>
+          <div class="hero-desc">+1 al radio de impacto de área (splash) a la magia aliada. Melena blanca ingrávida con puntas violetas.</div>
+          <div class="hero-aura">✨ Pentagrama violeta/índigo giratorio con runas</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_05.png" class="hero-card-img" alt="Elena Sombraverde">
+        <div>
+          <div class="hero-name">05. Elena Sombraverde &bull; Ojo del Alba</div>
+          <div class="hero-meta">Guardabosques Élite &bull; Pasiva: Tiro Certero</div>
+          <div class="hero-desc">+1 de alcance a arqueros aliados contra objetivos aislados. Trenza lateral castaña rojiza con pluma de halcón.</div>
+          <div class="hero-aura">✨ Remolino de hojas otoñales esmeralda y ámbar</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_06.png" class="hero-card-img" alt="Ignis">
+        <div>
+          <div class="hero-name">06. Ignis &bull; Templario de la Forja</div>
+          <div class="hero-meta">Guerrero Ígneo &bull; Pasiva: Filo Candente</div>
+          <div class="hero-desc">Ataques queman al objetivo con 3 de daño verdadero prolongado. Cresta mohicana corta degradada de rojo a naranja fuego.</div>
+          <div class="hero-aura">✨ Brasas al rojo vivo y chispas de ceniza ascendentes</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_07.png" class="hero-card-img" alt="Seraphina">
+        <div>
+          <div class="hero-name">07. Seraphina &bull; Voz de la Aurora</div>
+          <div class="hero-meta">Sacerdotisa de Batalla &bull; Pasiva: Gracia del Reino</div>
+          <div class="hero-desc">Regenera 2 HP/s a tropas aliadas a 2 celdas a la redonda. Rulos dorados coronados por diadema de laurel de oro.</div>
+          <div class="hero-aura">✨ Halo sacro blanco/dorado que palpita suavemente</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_08.png" class="hero-card-img" alt="Roderick">
+        <div>
+          <div class="hero-name">08. Roderick &bull; El Halcón Gris</div>
+          <div class="hero-meta">Estratega Mercenario &bull; Pasiva: Economía de Campaña</div>
+          <div class="hero-desc">Genera +1 de oro pasivo adicional por segundo. Melena entrecana peinada hacia atrás con parche en el ojo.</div>
+          <div class="hero-aura">✨ Monedas y sellos militares dorados flotantes</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_09.png" class="hero-card-img" alt="Lyra">
+        <div>
+          <div class="hero-name">09. Lyra &bull; La Tejearcanos</div>
+          <div class="hero-meta">Hechicera de Relámpago &bull; Pasiva: Arco Voltaico</div>
+          <div class="hero-desc">Ataques mágicos rebotan 50% de daño a un rival cercano. Bob asimétrico azul eléctrico con chispas estáticas.</div>
+          <div class="hero-aura">✨ Zigzag eléctrico azul cian chisporroteante en el piso</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_10.png" class="hero-card-img" alt="Torvald">
+        <div>
+          <div class="hero-name">10. Torvald &bull; Señor de los Picos</div>
+          <div class="hero-meta">Bárbaro de las Tierras Altas &bull; Pasiva: Furia Nórdica</div>
+          <div class="hero-desc">+30% de velocidad de ataque si la salud cae por debajo del 50%. Melena salvaje castaña con trenzas y barba nórdica partida.</div>
+          <div class="hero-aura">✨ Huellas de escarcha azul gélido con niebla baja fría</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_11.png" class="hero-card-img" alt="Althea">
+        <div>
+          <div class="hero-name">11. Althea &bull; Capitana de los Astilleros</div>
+          <div class="hero-meta">Pionera Marina &bull; Pasiva: Maniobra de Flanco</div>
+          <div class="hero-desc">+20% de velocidad de marcha de tropas al cruzar puentes o ríos. Melena aguamarina recogida en moño con aguja de plata.</div>
+          <div class="hero-aura">✨ Ondas concéntricas de agua turquesa simulando oleaje</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_12.png" class="hero-card-img" alt="Sir Cedric">
+        <div>
+          <div class="hero-name">12. Sir Cedric &bull; El Errante</div>
+          <div class="hero-meta">Caballero Redimido &bull; Pasiva: Última Resistencia</div>
+          <div class="hero-desc">Otorga 3s de invulnerabilidad al primer aliado a punto de morir. Pelo negro desgreñado tapando ojos con cinta gastada.</div>
+          <div class="hero-aura">✨ Volutas de humo ceniciento plateado con brillos de acero</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_13.png" class="hero-card-img" alt="Mira">
+        <div>
+          <div class="hero-name">13. Mira &bull; Susurro del Pantano</div>
+          <div class="hero-meta">Alquimista Erudita &bull; Pasiva: Frasco de Fango</div>
+          <div class="hero-desc">Reduce la armadura de los enemigos impactados en -2 puntos. Trenza verde oliva entrelazada con bayas rojas.</div>
+          <div class="hero-aura">✨ Vapores tenues verde lima y burbujas alquímicas flotantes</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_14.png" class="hero-card-img" alt="Bastian">
+        <div>
+          <div class="hero-name">14. Bastian &bull; Mariscal de Acero</div>
+          <div class="hero-meta">Veterano General &bull; Pasiva: Disciplina de Hierro</div>
+          <div class="hero-desc">Inmune a ralentizaciones y retrocesos para su escuadrón. Pelo blanco corto rapado a los lados con bigote espeso.</div>
+          <div class="hero-aura">✨ Mini-escudos heráldicos de 3x3 px orbitando en círculo</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_15.png" class="hero-card-img" alt="Zephyr">
+        <div>
+          <div class="hero-name">15. Zephyr &bull; Filo del Viento</div>
+          <div class="hero-meta">Nómada del Desierto &bull; Pasiva: Evasión Espejismo</div>
+          <div class="hero-desc">20% de probabilidad de evadir ataques físicos cuerpo a cuerpo. Coleta baja rubio trigo parcialmente cubierta por turbante.</div>
+          <div class="hero-aura">✨ Mini-remolinos de arena dorada en los tobillos</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_16.png" class="hero-card-img" alt="Isolde">
+        <div>
+          <div class="hero-name">16. Isolde &bull; Dama del Invierno</div>
+          <div class="hero-meta">Hechicera Glacial &bull; Pasiva: Escarcha Profunda</div>
+          <div class="hero-desc">Ralentiza a los enemigos cercanos un 25% en movimiento y ataque. Pelo azul hielo pálido con horquillas de cristal de cuarzo.</div>
+          <div class="hero-aura">✨ Círculo de cristales de nieve pixelados y escarcha afilada</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_17.png" class="hero-card-img" alt="Caelum">
+        <div>
+          <div class="hero-name">17. Caelum &bull; Centinela del Cenit</div>
+          <div class="hero-meta">Caballero Solar &bull; Pasiva: Luz Radiante</div>
+          <div class="hero-desc">Ciega brevemente a atacantes reduciendo su precisión en 30%. Melena rubia despuntada en rayos solares brillantes.</div>
+          <div class="hero-aura">✨ Rayos radiales dorados emanando de los talones</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_18.png" class="hero-card-img" alt="Morgana">
+        <div>
+          <div class="hero-name">18. Morgana &bull; La Hereje</div>
+          <div class="hero-meta">Inquisidora de Sombras &bull; Pasiva: Cosecha de Almas</div>
+          <div class="hero-desc">Eliminar enemigos restaura 15 HP al aliado con menor salud. Pelo azabache liso en ángulo recto con mechón carmesí.</div>
+          <div class="hero-aura">✨ Llamas sombrías púrpuras titilantes a sus pies</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_19.png" class="hero-card-img" alt="Rowan">
+        <div>
+          <div class="hero-name">19. Rowan &bull; Protector del Roble</div>
+          <div class="hero-meta">Guardián Silvano &bull; Pasiva: Enraizamiento</div>
+          <div class="hero-desc">Atacantes cuerpo a cuerpo quedan inmovilizados durante 1s. Melena castaña espesa con ramas de acebo vivas.</div>
+          <div class="hero-aura">✨ Brotes y raíces verdes vivas que nacen bajo sus pasos</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="sprites/Units/hero_20.png" class="hero-card-img" alt="Vesper">
+        <div>
+          <div class="hero-name">20. Vesper &bull; La Espada Fantasma</div>
+          <div class="hero-meta">Asesino de las Sombras &bull; Pasiva: Paso Umbrío</div>
+          <div class="hero-desc">Se teletransporta tras el rival más lejano al iniciar el choque. Pelo plateado corto en puntas afiladas con antifaz oscuro.</div>
+          <div class="hero-aura">✨ Estela de neblina espectral azul oscura que deja rastro</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -484,6 +782,9 @@
     <h2 class="section-title">📜 Registro de Hitos & DevLog</h2>
     <div id="timelineContainer">
       <!-- Se carga dinámicamente desde backlog.json o estático de respaldo -->
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-09] FASE-16 (v0.5.0):</b> Sistema de Guardado y Carga Local (IndexedDB), Selector de 20 Héroes Comandantes y Mapamundi Continental — Menú de Ajustes con botones directos 'Guardar Partida (Local)' y 'Cargar Partida (Local)' en IndexedDB del navegador, pantalla de Login dual ('Continuar con Google' para nube mock vs 'JUGAR DIRECTAMENTE' para progreso local), modal interactivo para elegir entre 20 Héroes Comandantes con rasgos físicos y auras pixel art personalizadas, niebla de guerra continental por dificultad y suite de 33/33 pruebas EditMode pasadas.</div>
+      </div>
       <div class="timeline-item">
         <div class="timeline-text"><b>[2026-10-06] FASE-17:</b> Backend Supabase & Banda Sonora Chiptune 8-bit — Persistencia en PostgreSQL con RLS en proyecto lore vía SupabaseAuthService con fallback offline; sintetizador procedural 8-bit (NES 2A03) en memoria con 3 temas musicales en bucle (Menu, Overworld, Battle), 9 efectos de sonido retro e integración en AudioManager persistente con control de volumen/mute.</div>
       </div>
