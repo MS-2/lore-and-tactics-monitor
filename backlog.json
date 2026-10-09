@@ -1,23 +1,24 @@
 {
     "project":  "Lore \u0026 Tactics",
     "daily_token_quota_target":  "25%",
-    "current_phase":  16,
-    "agent_status":  "Fase 16: Guardado/Carga Local en IndexedDB, Selector de 20 Héroes y 33/33 Tests EditMode",
-    "last_updated":  "2026-10-09T16:34:26",
-    "total_estimated_tokens":  "115.0k",
+    "current_phase":  17,
+    "agent_status":  "Fase 17: Tope de 5 Aldeanos con Indicador 0/5, Dock Izquierdo de Mejoras y 35/35 Tests EditMode",
+    "last_updated":  "2026-10-09T17:29:16",
+    "total_estimated_tokens":  "125.0k",
     "links":  {
                   "itch_io":  "https://ms-2.itch.io/lore-tactics",
                   "buymeacoffee":  "https://buymeacoffee.com/juanjosejjb",
                   "github_repo":  "https://github.com/MS-2/Lore-and-Tactics"
               },
     "metrics":  {
-                    "editmode_tests_passed":  "33 / 33 (100% pasando)",
+                    "editmode_tests_passed":  "35 / 35 (100% pasando)",
                     "webgl_build_status":  "Operativo en itch.io (HTML5 Portrait - Vertical Lane)",
                     "units_count":  37,
                     "playable_levels":  10,
                     "simulation_tick_rate":  "10 Hz Determinista"
                 },
     "recently_completed":  [
+                               "[2026-10-09] FASE-17: Tope de 5 Aldeanos, Indicador Visual 0/5 y Dock Izquierdo de Mejoras de Batalla - Límite estricto de 5 aldeanos simultáneos por bando para evitar atascos de pathfinding y saturación de spawn, indicador visual reactivo \u00270/5\u0027 y badge \u0027LÍMITE (5/5)\u0027 en la tarjeta de campesino, mina de oro alejada a distancia segura en los 10 niveles, dock lateral retráctil \u0027UpgradesDock\u0027 con notificación \u0027!\u0027 emergente, reubicación del Aserradero y adición de 3 mejoras de combate temporales (Filos Templados, Armadura de Acero, Marcha Forzada), y suite de 35/35 pruebas EditMode pasando al 100%.",
                                "[2026-10-09] FASE-16: Sistema de Guardado y Carga Local (IndexedDB) \u0026 Selector de 20 Héroes Comandantes - Botón \u0027Guardar Partida (Local)\u0027 y \u0027Cargar Partida (Local)\u0027 en Ajustes con persistencia en PlayerPrefs (IndexedDB de navegador sin límite de 5MB), pantalla de Login con botón \u0027JUGAR DIRECTAMENTE\u0027 (local) y distinción explícita de guardado en la nube mock de Google, selector interactivo de 20 héroes comandantes con rasgos visuales y auras, y suite de 6 pruebas unitarias SaveLoadTests (33/33 tests EditMode verdes).",
                                "[2026-10-06] FASE-15: Overhaul de Prototipo v3 - Apple Login oculto de UI (código intacto), set completo de sprites pixel art 32x32 de unidades y bases, rediseño de OverworldCanvas y 8 talentos funcionales en batalla (~4.5k tokens)",
                                "[2026-10-06] FASE-14: Flanco de Recursos \u0026 Perímetro Defensivo - Reubicación de mina de oro a la derecha (x=9), bosque despejado y 2 torres defensivas alejadas a 3 casillas de los flancos del castillo (~2.5k tokens)",
