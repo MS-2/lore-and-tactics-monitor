@@ -1,66 +1,69 @@
 {
-    "project":  "Lore \u0026 Tactics",
-    "daily_token_quota_target":  "25%",
-    "current_phase":  17,
-    "agent_status":  "Fase 17: Tope de 5 Aldeanos con Indicador 0/5, Dock Izquierdo de Mejoras y 35/35 Tests EditMode",
-    "last_updated":  "2026-10-09T17:29:16",
-    "total_estimated_tokens":  "125.0k",
-    "links":  {
-                  "itch_io":  "https://ms-2.itch.io/lore-tactics",
-                  "buymeacoffee":  "https://buymeacoffee.com/juanjosejjb",
-                  "github_repo":  "https://github.com/MS-2/Lore-and-Tactics"
-              },
-    "metrics":  {
-                    "editmode_tests_passed":  "35 / 35 (100% pasando)",
-                    "webgl_build_status":  "Operativo en itch.io (HTML5 Portrait - Vertical Lane)",
-                    "units_count":  37,
-                    "playable_levels":  10,
-                    "simulation_tick_rate":  "10 Hz Determinista"
-                },
-    "recently_completed":  [
-                               "[2026-10-09] FASE-17: Tope de 5 Aldeanos, Indicador Visual 0/5 y Dock Izquierdo de Mejoras de Batalla - Límite estricto de 5 aldeanos simultáneos por bando para evitar atascos de pathfinding y saturación de spawn, indicador visual reactivo \u00270/5\u0027 y badge \u0027LÍMITE (5/5)\u0027 en la tarjeta de campesino, mina de oro alejada a distancia segura en los 10 niveles, dock lateral retráctil \u0027UpgradesDock\u0027 con notificación \u0027!\u0027 emergente, reubicación del Aserradero y adición de 3 mejoras de combate temporales (Filos Templados, Armadura de Acero, Marcha Forzada), y suite de 35/35 pruebas EditMode pasando al 100%.",
-                               "[2026-10-09] FASE-16: Sistema de Guardado y Carga Local (IndexedDB) \u0026 Selector de 20 Héroes Comandantes - Botón \u0027Guardar Partida (Local)\u0027 y \u0027Cargar Partida (Local)\u0027 en Ajustes con persistencia en PlayerPrefs (IndexedDB de navegador sin límite de 5MB), pantalla de Login con botón \u0027JUGAR DIRECTAMENTE\u0027 (local) y distinción explícita de guardado en la nube mock de Google, selector interactivo de 20 héroes comandantes con rasgos visuales y auras, y suite de 6 pruebas unitarias SaveLoadTests (33/33 tests EditMode verdes).",
-                               "[2026-10-06] FASE-15: Overhaul de Prototipo v3 - Apple Login oculto de UI (código intacto), set completo de sprites pixel art 32x32 de unidades y bases, rediseño de OverworldCanvas y 8 talentos funcionales en batalla (~4.5k tokens)",
-                               "[2026-10-06] FASE-14: Flanco de Recursos \u0026 Perímetro Defensivo - Reubicación de mina de oro a la derecha (x=9), bosque despejado y 2 torres defensivas alejadas a 3 casillas de los flancos del castillo (~2.5k tokens)",
-                               "[2026-10-06] FASE-13: Offset de Mundo de Cámara \u0026 BottomDock Compacto (130px) - Despeje completo del grid y Castillo del Reino por encima del dock, tarjetas tácticas compactas de 80px y centrado de carril (~2.8k tokens)",
-                               "[2026-10-06] FASE-12: BottomDock Inferior con Pestañas \u0026 Safe Area Móvil - Dock scrolleable horizontalmente, adaptación rigurosa a Safe Area (iPhone 17e \u0026 Pixel 7), reducción a 1 mina de oro por jugador y actualización del monitor público (~3.1k tokens)",
-                               "[2026-10-05] FASE-11: RightDock con Pestañas [TODO / TROPA / ECO] \u0026 Panel Scrolleable - ScrollRect con RectMask2D, escalabilidad para futuras unidades ilimitadas, filtrado por categorías y galería de capturas móviles en monitor público (~3.2k tokens)",
-                               "[2026-10-05] FASE-10: HUD Móvil Legible y Sintetizado (iPhone 17e \u0026 Pixel 7) - Set de 18 iconos pixel art 32x32, TopBar modular con chips de recursos y bases, Action Cards con retratos y costes destacados, Target Frame con 4 badges de combate y textos grandes (~3.5k tokens)",
-                               "[2026-10-05] FASE-09: Sprite Triangular Dorado para Mina, Inspección de Mina (Trabajadores en vivo) y Descripciones de Unidades/IA en units.json y Target Frame (~4.6k tokens)",
-                               "[2026-10-05] FASE-08: Adaptación de GridView \u0026 Carril Vertical 9:16 - Mapas 11x32 orientados con Reino abajo y Horda arriba, padding perimetral decorativo, encuadre de cámara y bounds verticales (~3.6k tokens)",
-                               "[2026-10-05] FASE-07: Dock Lateral Derecho \u0026 Campo de Batalla Maximizada (\u003e90% pantalla) - Botones de invocación verticales accesibles al pulgar derecho, barra superior flotante ultradelgada, encaje de cuadrícula completo y despliegue a itch.io (~4.1k tokens)",
-                               "[2026-10-05] FASE-06: UI Nativa Portrait - Canvas 1080x1920 adaptable a 19.5:9/20:9, Thumb Dock inferior 2x3 para 1 sola mano (pantallas 5.9-6.9 in), cámara táctica enfocada en castillo y despliegue a itch.io (~4.9k tokens)",
-                               "[2026-10-05] FASE-05: Prototipo RTS v2 - Mapas extendidos 32x11, Target Frame al tocar unidad, Aserradero mejorable con oro, Tuerca de ajustes con reinicio, orientación Portrait/Landscape y Árbol de Talentos (~5.7k tokens)",
-                               "[2026-10-05] FASE-04: Portal GitHub Pages, Galería de Capturas, Documentación Técnica y Guía de Juego (~5.2k tokens)",
-                               "[2026-10-05] FASE-03: Compilación y Verificación de Build WebGL en Navegador Local (~4.8k tokens)",
-                               "[2026-10-05] FASE-02: Generación Automática de Escenas (Login, Overworld, Battle) y Suite de Pruebas EditMode (10/10) (~8.5k tokens)",
-                               "[2026-10-05] FASE-01: Implementación de Simulación de Batalla C# Puro, A* Pathfinder, Economía y Vistas Desacopladas (~18.0k tokens)",
-                               "[2026-10-05] FASE-00: Arquitectura del Proyecto, Reglas de Agentes, Definición de Datos JSON y Setup de Repositorio (~12.0k tokens)"
-                           ],
-    "roadmap":  [
-                    {
-                        "id":  "TASK-005",
-                        "title":  "Generación de Sprites 4-bit definitivos con PixelLab",
-                        "status":  "in_progress",
-                        "assigned_agent":  "pixel-artist"
-                    },
-                    {
-                        "id":  "TASK-006",
-                        "title":  "Banda Sonora Chiptune 8-bits y Paisaje Sonoro de Batalla",
-                        "status":  "planned",
-                        "assigned_agent":  "chiptune-composer"
-                    },
-                    {
-                        "id":  "TASK-007",
-                        "title":  "Integración Real de Backend Supabase Auth (Google \u0026 Apple)",
-                        "status":  "planned",
-                        "assigned_agent":  "backend-engineer"
-                    },
-                    {
-                        "id":  "TASK-008",
-                        "title":  "Ampliación de Campaña Overworld a 10 Niveles con Jefes de Zona",
-                        "status":  "planned",
-                        "assigned_agent":  "level-designer"
-                    }
-                ]
+    "project": "Lore & Tactics",
+    "daily_token_quota_target": "25%",
+    "current_phase": 20,
+    "agent_status": "Fase 20: Dragón Negro Volador, Velocidades Dinámicas y Batallas de Overworld (Oasis, Puerto Celeste, Kar-Drak)",
+    "last_updated": "2026-10-10T14:18:12",
+    "total_estimated_tokens": "135.0k",
+    "links": {
+        "itch_io": "https://ms-2.itch.io/lore-tactics",
+        "buymeacoffee": "https://buymeacoffee.com/juanjosejjb",
+        "github_repo": "https://github.com/MS-2/Lore-and-Tactics"
+    },
+    "metrics": {
+        "editmode_tests_passed": "40 / 40 (100% pasando)",
+        "webgl_build_status": "Operativo en itch.io (HTML5 Portrait - Vertical Lane)",
+        "units_count": 38,
+        "playable_levels": 13,
+        "simulation_tick_rate": "10 Hz Determinista"
+    },
+    "recently_completed": [
+        "[2026-10-10] FASE-20: Dragón Negro Volador, Velocidades Dinámicas y Batallas de Overworld (Oasis, Puerto Celeste, Kar-Drak) - Unidad legendaria Dragón Negro (400 oro, 120 madera) con vuelo inmune a melee, ataque en cono de fuego aire-tierra y quemadura de 3s; velocidades tácticas (catapultas 0.38 más lentas, lanceros 1.15 más rápidos que caballeros 0.8, magos 0.8 y arqueros 0.9); 3 nuevos niveles en el mapa (Oasis de las Dunas, Puerto Celeste y Ruinas de Kar-Drak); 40/40 pruebas EditMode.",
+        "[2026-10-10] FASE-19: Slider de Velocidad de Batalla (1x, 2x, 3x) en Ajustes & Despliegue en Itch.io - Slider interactivo integrado en SettingsModal con botones de paso +/- y snapping 1x (Normal), 2x (Rápido) y 3x (Turbo); control dinámico de Time.timeScale en BattleController y GameSession con persistencia en PlayerPrefs y reset seguro al salir o finalizar combate; nueva prueba unitaria EditMode (36/36 tests pasando).",
+        "[2026-10-09] FASE-18: Ergonometría Móvil de Emplazamientos, Salir Seguro en Ajustes con Diálogo de Confirmación y Corrección de Glifos - Separación del botón de combate de la 'X' de cierre (56x56), autocierre de tarjeta al abrir talentos o tiendas, opción de salir en Ajustes con advertencia de guardado local, aserradero sin límite de nivel y nuevo build WebGL desplegado en itch.io.",
+        "[2026-10-09] FASE-17: Tope de 5 Aldeanos, Indicador Visual 0/5 y Dock Izquierdo de Mejoras de Batalla - Límite estricto de 5 aldeanos simultáneos por bando para evitar atascos de pathfinding y saturación de spawn, indicador visual reactivo '0/5' y badge 'LÍMITE (5/5)' en la tarjeta de campesino, mina de oro alejada a distancia segura en los 10 niveles, dock lateral retráctil 'UpgradesDock' con notificación '!' emergente, reubicación del Aserradero y adición de 3 mejoras de combate temporales (Filos Templados, Armadura de Acero, Marcha Forzada), y suite de 35/35 pruebas EditMode pasando al 100%.",
+        "[2026-10-09] FASE-16: Sistema de Guardado y Carga Local (IndexedDB) & Selector de 20 Héroes Comandantes - Botón 'Guardar Partida (Local)' y 'Cargar Partida (Local)' en Ajustes con persistencia en PlayerPrefs (IndexedDB de navegador sin límite de 5MB), pantalla de Login con botón 'JUGAR DIRECTAMENTE' (local) y distinción explícita de guardado en la nube mock de Google, selector interactivo de 20 héroes comandantes con rasgos visuales y auras, y suite de 6 pruebas unitarias SaveLoadTests (33/33 tests EditMode verdes).",
+        "[2026-10-06] FASE-15: Overhaul de Prototipo v3 - Apple Login oculto de UI (código intacto), set completo de sprites pixel art 32x32 de unidades y bases, rediseño de OverworldCanvas y 8 talentos funcionales en batalla (~4.5k tokens)",
+        "[2026-10-06] FASE-14: Flanco de Recursos & Perímetro Defensivo - Reubicación de mina de oro a la derecha (x=9), bosque despejado y 2 torres defensivas alejadas a 3 casillas de los flancos del castillo (~2.5k tokens)",
+        "[2026-10-06] FASE-13: Offset de Mundo de Cámara & BottomDock Compacto (130px) - Despeje completo del grid y Castillo del Reino por encima del dock, tarjetas tácticas compactas de 80px y centrado de carril (~2.8k tokens)",
+        "[2026-10-06] FASE-12: BottomDock Inferior con Pestañas & Safe Area Móvil - Dock scrolleable horizontalmente, adaptación rigurosa a Safe Area (iPhone 17e & Pixel 7), reducción a 1 mina de oro por jugador y actualización del monitor público (~3.1k tokens)",
+        "[2026-10-05] FASE-11: RightDock con Pestañas [TODO / TROPA / ECO] & Panel Scrolleable - ScrollRect con RectMask2D, escalabilidad para futuras unidades ilimitadas, filtrado por categorías y galería de capturas móviles en monitor público (~3.2k tokens)",
+        "[2026-10-05] FASE-10: HUD Móvil Legible y Sintetizado (iPhone 17e & Pixel 7) - Set de 18 iconos pixel art 32x32, TopBar modular con chips de recursos y bases, Action Cards con retratos y costes destacados, Target Frame con 4 badges de combate y textos grandes (~3.5k tokens)",
+        "[2026-10-05] FASE-09: Sprite Triangular Dorado para Mina, Inspección de Mina (Trabajadores en vivo) y Descripciones de Unidades/IA en units.json y Target Frame (~4.6k tokens)",
+        "[2026-10-05] FASE-08: Adaptación de GridView & Carril Vertical 9:16 - Mapas 11x32 orientados con Reino abajo y Horda arriba, padding perimetral decorativo, encuadre de cámara y bounds verticales (~3.6k tokens)",
+        "[2026-10-05] FASE-07: Dock Lateral Derecho & Campo de Batalla Maximizada (>90% pantalla) - Botones de invocación verticales accesibles al pulgar derecho, barra superior flotante ultradelgada, encaje de cuadrícula completo y despliegue a itch.io (~4.1k tokens)",
+        "[2026-10-05] FASE-06: UI Nativa Portrait - Canvas 1080x1920 adaptable a 19.5:9/20:9, Thumb Dock inferior 2x3 para 1 sola mano (pantallas 5.9-6.9 in), cámara táctica enfocada en castillo y despliegue a itch.io (~4.9k tokens)",
+        "[2026-10-05] FASE-05: Prototipo RTS v2 - Mapas extendidos 32x11, Target Frame al tocar unidad, Aserradero mejorable con oro, Tuerca de ajustes con reinicio, orientación Portrait/Landscape y Árbol de Talentos (~5.7k tokens)",
+        "[2026-10-05] FASE-04: Portal GitHub Pages, Galería de Capturas, Documentación Técnica y Guía de Juego (~5.2k tokens)",
+        "[2026-10-05] FASE-03: Compilación y Verificación de Build WebGL en Navegador Local (~4.8k tokens)",
+        "[2026-10-05] FASE-02: Generación Automática de Escenas (Login, Overworld, Battle) y Suite de Pruebas EditMode (10/10) (~8.5k tokens)",
+        "[2026-10-05] FASE-01: Implementación de Simulación de Batalla C# Puro, A* Pathfinder, Economía y Vistas Desacopladas (~18.0k tokens)",
+        "[2026-10-05] FASE-00: Arquitectura del Proyecto, Reglas de Agentes, Definición de Datos JSON y Setup de Repositorio (~12.0k tokens)"
+    ],
+    "roadmap": [
+        {
+            "id": "TASK-005",
+            "title": "Generación de Sprites 4-bit definitivos con PixelLab",
+            "status": "in_progress",
+            "assigned_agent": "pixel-artist"
+        },
+        {
+            "id": "TASK-006",
+            "title": "Banda Sonora Chiptune 8-bits y Paisaje Sonoro de Batalla",
+            "status": "planned",
+            "assigned_agent": "chiptune-composer"
+        },
+        {
+            "id": "TASK-007",
+            "title": "Integración Real de Backend Supabase Auth (Google & Apple)",
+            "status": "planned",
+            "assigned_agent": "backend-engineer"
+        },
+        {
+            "id": "TASK-008",
+            "title": "Ampliación de Campaña Overworld a 10 Niveles con Jefes de Zona",
+            "status": "planned",
+            "assigned_agent": "level-designer"
+        }
+    ]
 }
