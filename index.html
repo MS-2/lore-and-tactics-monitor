@@ -152,7 +152,7 @@
   <div class="grid-stats">
     <div class="stat-card">
       <div class="stat-label">Pruebas EditMode</div>
-      <div class="stat-value stat-highlight" id="testsValue">33 / 33 Pasadas</div>
+      <div class="stat-value stat-highlight" id="testsValue">42 / 42 Pasadas (100%)</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Simulación de Batalla</div>
@@ -160,11 +160,11 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">Unidades & Facciones</div>
-      <div class="stat-value stat-highlight">17 Tropas + 20 Héroes</div>
+      <div class="stat-value stat-highlight">18 Tropas + 21 Héroes</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Campaña & Niveles</div>
-      <div class="stat-value" style="color: var(--green);">10 Misiones Continentales</div>
+      <div class="stat-value" style="color: var(--green);">13 Misiones Continentales</div>
     </div>
   </div>
 
@@ -240,21 +240,28 @@
         <img src="screenshots/09_continental_overworld_map.png" class="gallery-thumb" alt="Mapamundi Continental">
         <div class="gallery-info">
           <div class="gallery-title">2. Mapamundi Continental Modular</div>
-          <div class="gallery-desc">Retazos de tiles 4-bit, sendero de rutas animadas, niebla de guerra en zonas de jefe y nodo capital con Héroe.</div>
+          <div class="gallery-desc">Retazos de tiles 4-bit, sendero de rutas animadas y comandante supremo Alan 'Dev' liderando desde la capital.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/06_settings_modal.png')">
         <img src="screenshots/06_settings_modal.png" class="gallery-thumb" alt="Menú de Ajustes">
         <div class="gallery-info">
-          <div class="gallery-title">3. Menú de Ajustes (Guardado & Carga Local)</div>
-          <div class="gallery-desc">Botones manuales 'Guardar Partida (Local)' y 'Cargar Partida (Local)' con retroalimentación sonora, selector de héroe y volumen.</div>
+          <div class="gallery-title">3. Menú de Ajustes (Velocidad & Guardado)</div>
+          <div class="gallery-desc">Slider de velocidad x1/x2/x3, guardado y carga local persistente en IndexedDB, selección de héroes y audio.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/08_hero_selection.png')">
         <img src="screenshots/08_hero_selection.png" class="gallery-thumb" alt="Selector de Héroes">
         <div class="gallery-info">
-          <div class="gallery-title">4. Selector de Héroes Comandantes</div>
-          <div class="gallery-desc">Catálogo de 20 arquetipos únicos con peinados característicos, auras luminosas animadas y pasivas de combate.</div>
+          <div class="gallery-title">4. Selector de Héroes & Tienda de Monedas</div>
+          <div class="gallery-desc">Alan 'Dev' activo por defecto con su nuevo sprite de programador, y 20 héroes desbloqueables por Monedas de Guerra.</div>
+        </div>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('screenshots/10_dialogue_banner.png')">
+        <img src="screenshots/10_dialogue_banner.png" class="gallery-thumb" alt="Microdiálogos en Batalla">
+        <div class="gallery-info">
+          <div class="gallery-title">5. Microdiálogos Dinámicos (DialogueBanner)</div>
+          <div class="gallery-desc">Comentarios satíricos y reactivos en combate: despertar isekai, quejas de economía de madera y órdenes tácticas.</div>
         </div>
       </div>
       <div class="gallery-card" onclick="openLightbox('screenshots/03_battle.png')">
@@ -550,16 +557,26 @@
       </table>
     </div>
 
-    <h3 class="section-title" style="margin-top: 32px;">👑 20 Héroes Comandantes del Reino (Seleccionables)</h3>
+    <h3 class="section-title" style="margin-top: 32px;">👑 21 Héroes Comandantes del Reino (Seleccionables)</h3>
     <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px;">
-      El jugador puede seleccionar a su Héroe Comandante favorito desde el menú de Ajustes para liderar al Reino de Hierro en el mapa y la campaña. Cada héroe cuenta con sprite exclusivo, peinado y rasgo distintivo, aura pixel art y una habilidad pasiva única.
+      El jugador comienza la campaña con <b>Alan 'Dev'</b> como protagonista inicial por defecto, y puede desbloquear al resto de comandantes en el modal de Héroes utilizando Monedas de Guerra ganadas en combate. Cada héroe cuenta con sprite pixel art exclusivo, microdiálogos reactivos de batalla, rasgos distintivos y auras animadas.
     </p>
     <div class="hero-grid">
+      <!-- HEROE PROTAGONISTA -->
+      <div class="hero-card" style="border: 2px solid #38bdf8; background: linear-gradient(135deg, #0e1726 0%, #152238 100%);">
+        <img src="sprites/Units/hero_21.png" class="hero-card-img" alt="Alan 'Dev'" style="image-rendering: pixelated; width: 64px; height: 64px; border: 2px solid #38bdf8; border-radius: 8px;">
+        <div>
+          <div class="hero-name" style="color: #38bdf8;">★ PROTAGONISTA: Alan 'Dev' &bull; El Arquitecto del Código</div>
+          <div class="hero-meta" style="color: #a5f3fc;">Programador reencarnado en un mundo de fantasía &bull; Pasiva: Optimización de Memoria (Gratis / Inicial)</div>
+          <div class="hero-desc"><b>Rasgo:</b> Cabello negro largo, lentes cuadrados de montura gruesa con cristales blancos opacos y remera negra lisa sin logos.<br><b>Lore:</b> Un desarrollador de software que colapsó en su escritorio tras seis latas de energizante debugueando shaders a las 4 AM. Despierta en Aldoria convencido de que la guerra es una simulación RTS de los 90, tratando a los orcos como scripts defectuosos de IA y quejándose si el jugador no mejora el aserradero en los primeros 10 segundos.</div>
+          <div class="hero-aura">✨ Terminal binario verde, chispas de energizante y microdiálogos dinámicos en batalla</div>
+        </div>
+      </div>
       <div class="hero-card">
         <img src="sprites/Units/hero_01.png" class="hero-card-img" alt="Sir Aurelius">
         <div>
           <div class="hero-name">01. Sir Aurelius &bull; Filo de la Corona</div>
-          <div class="hero-meta">Paladín Comandante &bull; Pasiva: Vanguardia Real</div>
+          <div class="hero-meta">Paladín Comandante &bull; Pasiva: Vanguardia Real (🪙 150 Monedas)</div>
           <div class="hero-desc">+1 de armadura a todas las tropas aliadas al avanzar. Mechón rebelde blanco-plateado sobre pelo oscuro.</div>
           <div class="hero-aura">✨ Anillo elíptico dorado de 2px con destellos ámbar</div>
         </div>
@@ -782,6 +799,12 @@
     <h2 class="section-title">📜 Registro de Hitos & DevLog</h2>
     <div id="timelineContainer">
       <!-- Se carga dinámicamente desde backlog.json o estático de respaldo -->
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-11] FASE-21 (v0.6.0):</b> Protagonista Alan 'Dev' (Isekai Programador), Microdiálogos Dinámicos & Desbloqueo de Héroes — Alan 'Dev' (hero_21) establecido como héroe y comandante principal al iniciar nueva partida con sprite pixel art exclusivo (cabello largo negro, lentes de montura gruesa y cuadrada con cristales blancos opacos y remera negra lisa sin logos); nuevo sistema de microdiálogos reactivos (DialogueBanner) con barks contextuales (despertar isekai, quejas satíricas por demorar la mejora del aserradero a los 10s y órdenes de combate); bloqueo del resto de héroes para desbloqueo mediante Monedas de Guerra; ampliación y mejoras de contraste/legibilidad en el HUD del mapamundi; y suite de 42/42 pruebas EditMode pasando al 100%.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-text"><b>[2026-10-10] FASE-20:</b> Dragón Negro Volador, Velocidades Dinámicas y Batallas de Overworld — Unidad legendaria Dragón Negro con ataque de fuego en área y vuelo inmune a melee; velocidades de avance diferenciadas por tropa; y 3 nuevas misiones en el mapa continental (Oasis, Puerto Celeste, Ruinas).</div>
+      </div>
       <div class="timeline-item">
         <div class="timeline-text"><b>[2026-10-09] FASE-17 (v0.5.1):</b> Tope de 5 Aldeanos, Dock Izquierdo de Mejoras y Optimización de Spawn — Límite estricto de 5 aldeanos simultáneos por facción para erradicar cuellos de botella de recolección y bloqueos de pathfinding, indicador visual reactivo '0/5' con tarjeta en estado LÍMITE en el HUD, mina de oro alejada a distancia segura en los 10 mapas para liberar el radio de despliegue, nuevo dock retráctil UpgradesDock con alerta emergente '!' al poder costear mejoras, reubicación del Aserradero y adición de 3 mejoras de combate temporales (Filos Templados, Armadura de Acero, Marcha Forzada). 35/35 pruebas EditMode pasando.</div>
       </div>
