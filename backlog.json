@@ -1,23 +1,24 @@
 {
     "project":  "Lore \u0026 Tactics",
     "daily_token_quota_target":  "25%",
-    "current_phase":  21,
-    "agent_status":  "Fase 21: Protagonista Alan \u0027Dev\u0027 y Despliegue en itch.io completados",
-    "last_updated":  "2026-10-11T13:59:25",
-    "total_estimated_tokens":  "142.0k",
+    "current_phase":  23,
+    "agent_status":  "Fase 23: Árbol de 24 Especializaciones de Doble Raíz, Inventario de Materiales y Capturas Comerciales",
+    "last_updated":  "2026-10-17T16:31:39",
+    "total_estimated_tokens":  "154.0k",
     "links":  {
                   "itch_io":  "https://ms-2.itch.io/lore-tactics",
                   "buymeacoffee":  "https://buymeacoffee.com/juanjosejjb",
                   "github_repo":  "https://github.com/MS-2/Lore-and-Tactics"
               },
     "metrics":  {
-                    "editmode_tests_passed":  "42 / 42 (100% pasando)",
+                    "editmode_tests_passed":  "45 / 45 (100% pasando)",
                     "webgl_build_status":  "Operativo en itch.io (HTML5 Portrait - Vertical Lane)",
                     "units_count":  39,
                     "playable_levels":  13,
                     "simulation_tick_rate":  "10 Hz Determinista"
                 },
     "recently_completed":  [
+                               "[2026-10-17] FASE-23: Árbol de 24 Especializaciones de Doble Raíz, Inventario de Materiales de Guerra \u0026 Capturas Comerciales - Eliminación de Marcha Forzada; expansión de las 3 ramas a 24 nodos con 2 raíces independientes por rama (Vía A y Vía B); nuevo panel InventoryModal con 5 materiales de guerra obtenidos tras cada batalla y taller de canje por Monedas de Guerra y Puntos de Talento; contribución coordinada de los 8 agentes especializados; nuevas capturas comerciales y 45/45 pruebas EditMode pasando.",
                                "[2026-10-11] FASE-21: Protagonista Alan \u0027Dev\u0027 (Isekai Programador), Microdiálogos Dinámicos \u0026 Desbloqueo de Héroes por Monedas - Alan \u0027Dev\u0027 (hero_21) como héroe inicial por defecto con sprite pixel art dedicado (lentes de montura gruesa y cuadrada, cristales blancos, cabello largo y remera negra lisa), sistema reactivo de microdiálogos DialogueBanner (despertar, quejas por mejora de aserradero a los 10s y órdenes tácticas), desbloqueo de los demás héroes mediante Monedas de Guerra, ampliación del HUD y 42/42 pruebas EditMode pasando.",
                                "[2026-10-10] FASE-20: Dragón Negro Volador, Velocidades Dinámicas y Batallas de Overworld (Oasis, Puerto Celeste, Kar-Drak) - Unidad legendaria Dragón Negro (400 oro, 120 madera) con vuelo inmune a melee, ataque en cono de fuego aire-tierra y quemadura de 3s; velocidades tácticas (catapultas 0.38 más lentas, lanceros 1.15 más rápidos que caballeros 0.8, magos 0.8 y arqueros 0.9); 3 nuevos niveles en el mapa (Oasis de las Dunas, Puerto Celeste y Ruinas de Kar-Drak); 40/40 pruebas EditMode.",
                                "[2026-10-10] FASE-19: Slider de Velocidad de Batalla (1x, 2x, 3x) en Ajustes \u0026 Despliegue en Itch.io - Slider interactivo integrado en SettingsModal con botones de paso +/- y snapping 1x (Normal), 2x (Rápido) y 3x (Turbo); control dinámico de Time.timeScale en BattleController y GameSession con persistencia en PlayerPrefs y reset seguro al salir o finalizar combate; nueva prueba unitaria EditMode (36/36 tests pasando).",
